@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>research</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="research"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2015-03-31T16:13+0800"/>
+<meta name="author" content="ZHAO Xin"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" type="text/css" href="css/default.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">research</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Research</a>
+<ul>
+<li><a href="#sec-1-1">阅读中遇到的专业术语</a></li>
+<li><a href="#sec-1-2">moteemu整理</a>
+<ul>
+<li><a href="#sec-1-2-1">引言 MoteLab（维护、规模 / 可控、真实），特性介绍</a></li>
+<li><a href="#sec-1-2-2">APE、MoteEmu模型</a></li>
+<li><a href="#sec-1-2-3">总结中指出不足</a></li>
+<li><a href="#sec-1-2-4">交叉引用，过渡内容</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-3">sigcomm 2011</a>
+<ul>
+<li><a href="#sec-1-3-1">They Can Hear Your Heartbeats&ndash;Non-Invasive Security for Implantable Medical Devices</a></li>
+<li><a href="#sec-1-3-2">Secure in-band wireless pairing</a></li>
+<li><a href="#sec-1-3-3">Augmenting data center networks with multi-gigabit wireless links</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-2">hack</a>
+<ul>
+<li><a href="#sec-2-1">reaver</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Research</h2>
+<div class="outline-text-2" id="text-1">
+
+<p><a href="./thesis.html">My Thesis</a>
+</p>
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">阅读中遇到的专业术语</h3>
+<div class="outline-text-3" id="text-1-1">
+
+<ul>
+<li>AGC控制：自动增益控制（automatic gain control），对放大器的增益进行自动调节的过程。通常是为了使随输入信号电平变化而引起的输出信号电平变化少。实现这种功能的电路简称AGC环。AGC环是闭环电子电路，是一个负反馈系统，它可以分成增益受控放大电路和控制电压形成电路两部分。<a href="http://baike.baidu.com/view/99874.htm">来自这里</a>
+</li>
+<li>噪声系数：由于放大器本身就有噪声，输出端的信噪比和输入端信噪比是不一样的，为此，使用噪声系数来衡量放大器本身的噪声水平。公式表示为：噪声系数NF=输入端信噪比/输出端信噪比，单位常用“dB”。<a href="http://baike.baidu.com/view/141441.htm">来自这里</a>
+</li>
+<li>铃流电压：实际上是指,电话机响铃时的电压,交换机上的用户板输出到电话分机的一种交变电压.
+</li>
+<li>镜频抑制：镜像频率抑制通常在变频中应用比较广泛，比如70MHz中频，本振2GHz,经过滤波的RF为2.07GHz,若RF为1.93GHz，则同样可以混频出70MHz，此时，对滤波器酒提出了带外抑制，相应的有了中频信号的镜像抑制。
+</li>
+<li>CVSD编码：CVSD调制以其较低的应用难度、成本和编码速率，较好的语音质量广泛应用于战术通信网、卫星通信、蓝牙等无线语音传输领域。
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2"><span class="done DONE">DONE</span> moteemu整理 &nbsp;&nbsp;&nbsp;<span class="tag"><span class="WIN">WIN</span>&nbsp;<span class="LINUX">LINUX</span></span></h3>
+<div class="outline-text-3" id="text-1-2">
+
+<p>    <span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED: </span> <span class="timestamp">2011-08-25 四 21:46</span></span><br/>
+</p><ul>
+<li>State "DONE"       from "DOING" <span class="timestamp-wrapper"> <span class="timestamp">2011-08-25 四 21:46</span></span>
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1"><span class="done DONE">DONE</span> 引言 MoteLab（维护、规模 / 可控、真实），特性介绍</h4>
+<div class="outline-text-4" id="text-1-2-1">
+
+<p>     <span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED: </span> <span class="timestamp">2011-08-25 四 11:05</span></span><br/>
+</p><ul>
+<li>State "DONE"       from "TODO" <span class="timestamp-wrapper"> <span class="timestamp">2011-08-25 四 11:05</span></span>
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-2" class="outline-4">
+<h4 id="sec-1-2-2"><span class="done DONE">DONE</span> APE、MoteEmu模型</h4>
+<div class="outline-text-4" id="text-1-2-2">
+
+<p>     <span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED: </span> <span class="timestamp">2011-08-25 四 21:46</span></span><br/>
+</p><ul>
+<li>State "DONE"       from "TODO" <span class="timestamp-wrapper"> <span class="timestamp">2011-08-25 四 21:46</span></span>
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-3" class="outline-4">
+<h4 id="sec-1-2-3"><span class="done DONE">DONE</span> 总结中指出不足</h4>
+<div class="outline-text-4" id="text-1-2-3">
+
+<p>     <span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED: </span> <span class="timestamp">2011-08-25 四 21:46</span></span><br/>
+</p><ul>
+<li>State "DONE"       from "TODO" <span class="timestamp-wrapper"> <span class="timestamp">2011-08-25 四 21:46</span></span>
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-4" class="outline-4">
+<h4 id="sec-1-2-4"><span class="done DONE">DONE</span> 交叉引用，过渡内容</h4>
+<div class="outline-text-4" id="text-1-2-4">
+
+<p>     <span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED: </span> <span class="timestamp">2011-08-25 四 21:46</span></span><br/>
+</p><ul>
+<li>State "DONE"       from "TODO" <span class="timestamp-wrapper"> <span class="timestamp">2011-08-25 四 21:46</span></span>
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3">sigcomm 2011</h3>
+<div class="outline-text-3" id="text-1-3">
+
+
+</div>
+
+<div id="outline-container-1-3-1" class="outline-4">
+<h4 id="sec-1-3-1">They Can Hear Your Heartbeats&ndash;Non-Invasive Security for Implantable Medical Devices</h4>
+<div class="outline-text-4" id="text-1-3-1">
+
+<p>可移植医学设备implantable medical devices (IMDs)，已经普遍配备无线通信能力。但可
+能受到窃听，恶意指令等攻击。在设备上加安全软件不可行，（硬件限制、减小软件故障时
+的维护）。论文设计使用外部设备shield增强安全性，使用双天线全双工技术，在屏蔽其他
+设备与IMD通信的同时，shield可以正常接收信息，并作为中继与授权用户加密通信。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-3-2" class="outline-4">
+<h4 id="sec-1-3-2">Secure in-band wireless pairing</h4>
+<div class="outline-text-4" id="text-1-3-2">
+
+<p>增强802.11安全设置的便捷，已有的Push Button Configuration
+(PBC)方法，使用额外带宽，并无法抵御“中间人攻击”。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-3-3" class="outline-4">
+<h4 id="sec-1-3-3">Augmenting data center networks with multi-gigabit wireless links</h4>
+<div class="outline-text-4" id="text-1-3-3">
+
+<p>在数据中心网络中（如搜索引擎的服务器），热点节点的带宽不够用，论文考虑使用60GHz的
+无线通信进行补充，得到方便、便宜的解决方案。
+</p></div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">hack</h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">reaver</h3>
+<div class="outline-text-3" id="text-2-1">
+
+<ul>
+<li>确定是否可pin破解: dump命令, <code>54e.</code>, 注意 <code>.</code>, PWR大于-75时较易破解.
+</li>
+<li>一般使用 <code>reaver -anSv -d 0 -i mon0 -b MAC</code>
+</li>
+<li>当死循环时, 去掉 <code>-S</code>, 加入 <code>-d 3 -t 3 -n</code>, 或者用 =-s NewSession=试试.
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2015-03-31T16:13+0800</p>
+<p class="author">Author: ZHAO Xin</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

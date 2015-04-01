@@ -1,0 +1,54 @@
+* Research
+[[./research/thesis.org][My Thesis]]
+** 阅读中遇到的专业术语
+ - AGC控制：自动增益控制（automatic gain control），对放大器的增益进行自动调节的过程。通常是为了使随输入信号电平变化而引起的输出信号电平变化少。实现这种功能的电路简称AGC环。AGC环是闭环电子电路，是一个负反馈系统，它可以分成增益受控放大电路和控制电压形成电路两部分。[[http://baike.baidu.com/view/99874.htm][来自这里]]
+ - 噪声系数：由于放大器本身就有噪声，输出端的信噪比和输入端信噪比是不一样的，为此，使用噪声系数来衡量放大器本身的噪声水平。公式表示为：噪声系数NF=输入端信噪比/输出端信噪比，单位常用“dB”。[[http://baike.baidu.com/view/141441.htm][来自这里]]
+ - 铃流电压：实际上是指,电话机响铃时的电压,交换机上的用户板输出到电话分机的一种交变电压.
+ - 镜频抑制：镜像频率抑制通常在变频中应用比较广泛，比如70MHz中频，本振2GHz,经过滤波的RF为2.07GHz,若RF为1.93GHz，则同样可以混频出70MHz，此时，对滤波器酒提出了带外抑制，相应的有了中频信号的镜像抑制。
+ - CVSD编码：CVSD调制以其较低的应用难度、成本和编码速率，较好的语音质量广泛应用于战术通信网、卫星通信、蓝牙等无线语音传输领域。
+** DONE [#B] moteemu整理					  :WIN:LINUX:
+   CLOSED: [2011-08-25 四 21:46]
+   - State "DONE"       from "DOING"      [2011-08-25 四 21:46]
+*** DONE 引言 MoteLab（维护、规模 / 可控、真实），特性介绍
+    CLOSED: [2011-08-25 四 11:05]
+    - State "DONE"       from "TODO"       [2011-08-25 四 11:05]
+
+*** DONE APE、MoteEmu模型
+    CLOSED: [2011-08-25 四 21:46]
+    - State "DONE"       from "TODO"       [2011-08-25 四 21:46]
+*** DONE 总结中指出不足
+    CLOSED: [2011-08-25 四 21:46]
+    - State "DONE"       from "TODO"       [2011-08-25 四 21:46]
+*** DONE 交叉引用，过渡内容
+    CLOSED: [2011-08-25 四 21:46]
+    - State "DONE"       from "TODO"       [2011-08-25 四 21:46]
+** sigcomm 2011
+*** They Can Hear Your Heartbeats--Non-Invasive Security for Implantable Medical Devices
+可移植医学设备implantable medical devices (IMDs)，已经普遍配备无线通信能力。但可
+能受到窃听，恶意指令等攻击。在设备上加安全软件不可行，（硬件限制、减小软件故障时
+的维护）。论文设计使用外部设备shield增强安全性，使用双天线全双工技术，在屏蔽其他
+设备与IMD通信的同时，shield可以正常接收信息，并作为中继与授权用户加密通信。
+
+*** Secure in-band wireless pairing
+增强802.11安全设置的便捷，已有的Push Button Configuration
+(PBC)方法，使用额外带宽，并无法抵御“中间人攻击”。
+
+*** Augmenting data center networks with multi-gigabit wireless links
+在数据中心网络中（如搜索引擎的服务器），热点节点的带宽不够用，论文考虑使用60GHz的
+无线通信进行补充，得到方便、便宜的解决方案。
+** IOx                                                                          :IOx:fog:
+*** supported Router
+
+	Cisco networked devices such as our CGR 1120, 1240, 819 ISR and even some of our Video Surveillance Cameras.
+
+	IOx works by hosting applications in a *Guest Operating System (GOS)* running in a hypervisor directly on the *Connected Grid Router (CGR)*. This allows you to run your Python or even compiled code where it matters most: at the network edge. By default, the CGR comes packaged with *Yocto Linux*, but you can replace that image with your own Operating System.
+
+*** arch fig
+	[[file:research/pics/IOx_makeup.png][file:/windata/notes/org/research/pics/IOx_makeup.png]]
+	[[file:research/pics/overview-IOx.png][file:/windata/notes/org/research/pics/overview-IOx.png]]
+	[[file:research/pics/IOx_makeup1.jpg][file:/windata/notes/org/research/pics/IOx_makeup1.jpg]]
+* hack
+** reaver
+ - 确定是否可pin破解: dump命令, =54e.=, 注意 =.=, PWR大于-75时较易破解.
+ - 一般使用 =reaver -anSv -d 0 -i mon0 -b MAC=
+ - 当死循环时, 去掉 =-S=, 加入 =-d 3 -t 3 -n=, 或者用 =-s NewSession=试试.

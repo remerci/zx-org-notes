@@ -1,0 +1,74 @@
+* MyMachine
+
+** eeepc 1005pe 无线网卡 linux 驱动			     :eeepc:wireless:
+lspci 得到无线网卡设备号，google查找到无线网卡设备。
+
+驱动方法：
+ 1. ndiswrapper 无法进行破解
+ 2. compat-wireless
+
+第2种方法的驱动安装步骤：
+ 1. 检查 /lib /modules/`uname-r`/build 文件夹
+ 2. ./scripts/driver-select ath9k
+ 3. make, sudo make install
+ 4. sudo modprobe ath9k
+ 5. 检查安装是否成功
+#+BEGIN_SRC shell-script    
+    iwconfig
+    modinfo ath9k
+alias:          pci:v0000168Cd0000002Csv*sd*bc*sc*i*
+#+END_SRC
+ 6. 在/etc/modules中加入ath9k, 使驱动开机后自动加载入内核。
+
+原始安装包装的驱动在无线破解时，生成的监测模式端口mon0在channel -1，导致无法破解。
+通过google查找，下载一个patch后，重新安装可解决这个问题。
+** openwrt 多拨                                                                 :openwrt:ji2:
+*** 路由缓存
+用 ip route show cache 查看会看到很多缓存，可以禁用内核的路由缓存，在启动项里面加上 
+
+#+BEGIN_SRC shell-script
+echo -1 > /proc/sys/net/ipv4/rt_cache_rebuild_count
+ip route flush cache
+#+END_SRC
+*** 设置虚拟网卡
+#+BEGIN_SRC shell-script
+ip link add link eth1 vth2 type macvlan		# eth1指的是你的外网卡，vth2是虚拟的网卡名
+ifconfig vth2 hw ether 38-5B-F9-21-46-39	# mac地址不能相同
+ifconfig vth2 up
+#+END_SRC
+
+需要几拨就添加几个虚拟网卡 
+然后重启
+*** 在 mwan3 添加新的 wan 接口
+直接在luci里增加多个pppoe interface，编辑每个general setup，设置拨号用户名密码，
+advance setting 设置不同 metric
+physical settings，把多个wan interface设置成同一个wan vlan下，如 eth0.2
+firewall 设置同一个wan区下
+
+*** 编辑 mwan3 接口的时候注意最后一行
+#+BEGIN_EXAMPLE
+config interface 'wan1'
+option enabled '1'
+option reliability '1'
+option count '1'
+option timeout '2'
+option interval '60'
+option down '3'
+option up '5'
+list track_ip '114.114.114.114'
+list track_ip '58.216.114.245'
+list track_ip '222.185.173.145'
+list track_ip '222.184.115.137'
+       option 'reroute' '1'
+#+END_EXAMPLE
+
+*** multiwan对相同网关的路由不能有效地叠加，所以要修改/lib/netifd/ppp-up文件:
+
+[ -n "$IPREMOTE" ] && proto_add_ipv4_route 0.0.0.0 0 "$IPREMOTE"
+修改成：
+
+[ -n "$IPREMOTE" ] && proto_add_ipv4_route 0.0.0.0 0 "$IPLOCAL"
+保存并退出
+
+*** 多拨成功后配置多路由负载均衡
+

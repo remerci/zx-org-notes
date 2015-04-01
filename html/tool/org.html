@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>org</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="org"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2015-03-31T16:13+0800"/>
+<meta name="author" content="ZHAO Xin"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" type="text/css" href="css/default.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">org</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">org-mode in emacs</a>
+<ul>
+<li><a href="#sec-1-1">大纲结构处理能力</a></li>
+<li><a href="#sec-1-2">事件和日程</a>
+<ul>
+<li><a href="#sec-1-2-1">事件</a></li>
+<li><a href="#sec-1-2-2">日程</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-3">强大的txt表格处理能力</a></li>
+<li><a href="#sec-1-4">markup</a></li>
+<li><a href="#sec-1-5">方便的 formula &amp; fig 处理</a></li>
+<li><a href="#sec-1-6">link</a>
+<ul>
+<li><a href="#sec-1-6-1">更方便的插入 link</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-7">其它</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">org-mode in emacs &nbsp;&nbsp;&nbsp;<span class="tag"><span class="org">org</span>&nbsp;<span class="note">note</span></span></h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">大纲结构处理能力</h3>
+<div class="outline-text-3" id="text-1-1">
+
+
+<p>
+     类似 word 大纲视图的结构处理，可以用快捷键 
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<thead>
+<tr><th scope="col" class="left">key</th><th scope="col" class="left">func</th><th scope="col" class="left">notes</th></tr>
+</thead>
+<tbody>
+<tr><td class="left">S-Tab</td><td class="left">back to top 1 level</td><td class="left"></td></tr>
+<tr><td class="left">M-left</td><td class="left">promote heading 1 level</td><td class="left">M-S subtree</td></tr>
+<tr><td class="left">M-up</td><td class="left">move heading up</td><td class="left">M-S subtree</td></tr>
+<tr><td class="left">C-c C-x C-w</td><td class="left">delete heading</td><td class="left">M-w copy, C-y paste</td></tr>
+<tr><td class="left">C-c C-w</td><td class="left">move heading to &hellip;</td><td class="left"></td></tr>
+<tr><td class="left">C-c *</td><td class="left">normal text &lt;-&gt; heading</td><td class="left"></td></tr>
+</tbody>
+</table>
+
+
+
+
+<p>
+     对于已经完成的子树内容，可以用下面方法使之不活跃，即不在 agenda 中显示，不在大纲中显示等。
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">C-c C-x a</td><td class="left">add archive tag</td></tr>
+<tr><td class="left">C-c C-x A</td><td class="left">move to archive heading</td></tr>
+<tr><td class="left">C-c C-x C-s</td><td class="left">store to <sub>archive</sub> file</td></tr>
+</tbody>
+</table>
+
+
+<p>
+     可以用 C-c / 或者 C-c / r 只显示部分内容，而将其它内容隐藏。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">事件和日程</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+
+</div>
+
+<div id="outline-container-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1">事件</h4>
+<div class="outline-text-4" id="text-1-2-1">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">C-c C-t</td><td class="left">set state</td><td class="left"></td></tr>
+<tr><td class="left">S-left</td><td class="left">cycling state</td><td class="left">C-S cycling group</td></tr>
+<tr><td class="left">S-up</td><td class="left">cycling priority</td><td class="left"></td></tr>
+<tr><td class="left">C-c C-v</td><td class="left">list events in file</td><td class="left"></td></tr>
+<tr><td class="left">C-c a t</td><td class="left">list agenda events</td><td class="left"></td></tr>
+</tbody>
+</table>
+
+
+<p>
+    可以用进度条、checkbox等辅助，将大任务分成小任务。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-2-2" class="outline-4">
+<h4 id="sec-1-2-2">日程</h4>
+<div class="outline-text-4" id="text-1-2-2">
+
+<p>    C-c a 在 agenda list 文件中查找相关信息。
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">C-c [</td><td class="left">add current file to agenda list</td></tr>
+<tr><td class="left">C-c ]</td><td class="left">remove &hellip;</td></tr>
+<tr><td class="left">C-c C-x &lt;</td><td class="left">lock agenda list into current subtree</td></tr>
+</tbody>
+</table>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3">强大的txt表格处理能力</h3>
+<div class="outline-text-3" id="text-1-3">
+
+
+<ul>
+<li>第一行完成后，后面的几行会自动生成。
+
+</li>
+<li>可以用 <code>|- Tab</code> 或者 <code>C-c -</code> 生成表格横线。
+
+</li>
+<li>可以像excel那样进行表格计算。
+
+</li>
+<li>特殊行 <code>/ &lt;&gt; &lt;   &gt;</code> 可以组成列组，输出时有竖线。
+
+</li>
+<li><code>C-c |</code> 表格识别，默认空格或TAB分隔，带数字前缀多空格，C-u逗号分隔。
+</li>
+</ul>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-4" class="outline-3">
+<h3 id="sec-1-4">markup</h3>
+<div class="outline-text-3" id="text-1-4">
+
+
+<p>
+    主要是 <code>#+</code> 符号引导的。标题、作者、各种环境（example, verse, quote, src）。
+    可以引入其他文件，
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left"><code>\\</code></td><td class="left">line break</td></tr>
+<tr><td class="left">C-c '</td><td class="left">edit src in native mode</td></tr>
+<tr><td class="left">C-c ;</td><td class="left">comment rigion</td></tr>
+<tr><td class="left">&ndash;&mdash;</td><td class="left">horizontal rule</td></tr>
+</tbody>
+</table>
+
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-5" class="outline-3">
+<h3 id="sec-1-5">方便的 formula &amp; fig 处理</h3>
+<div class="outline-text-3" id="text-1-5">
+
+<p>直接支持 latex formula 的常用写法.
+表格公式加上下面的属性可以交叉引用 `<a href="#tab-basic-data">basic-data</a>':
+</p>
+
+
+<pre class="example">#+CAPTION: This is the caption for the next table (or link)
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-6" class="outline-3">
+<h3 id="sec-1-6">link</h3>
+<div class="outline-text-3" id="text-1-6">
+
+
+
+</div>
+
+<div id="outline-container-1-6-1" class="outline-4">
+<h4 id="sec-1-6-1">更方便的插入 link</h4>
+<div class="outline-text-4" id="text-1-6-1">
+
+<p>在 emacs 中的任意文件位置 <code>C-c l</code>, 存储 link
+在 org 中可以 <code>C-c C-l</code>, 插入存储的link
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-7" class="outline-3">
+<h3 id="sec-1-7">其它</h3>
+<div class="outline-text-3" id="text-1-7">
+
+<table  border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides" id="tab-basic-data">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">C-c r</td><td class="left">capture</td></tr>
+<tr><td class="left">C-c C-q</td><td class="left">tag</td></tr>
+</tbody>
+</table>
+
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2015-03-31T16:13+0800</p>
+<p class="author">Author: ZHAO Xin</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

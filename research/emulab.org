@@ -1,0 +1,99 @@
+#+title: Emulab相关
+
+* 存在问题
+** DOING snmpit脚本中创建vlan，配置端口速率等函数如何写
+交换机软件版本：v200r001c00spc300
+*** 参考其它脚本, 但存在很多问题. 
+get1等通用的可借鉴, 但CreateVlan, VlanList等基本不可用
+*** 结合UCD-snmp命令行工具, 华为mibs库
+MIB库内容参考, 命令行工具测试, 再配合其它脚本参考着写.
+
+ - 通过4008229999咨询得到 vlan 配置的 oid
+2011.5.25.42.3.1.1.1.1.12 hwL2VlanRowStatus
+ - 相近位置找到添加删除端口到vlan的oid
+2011.5.25.42.3.1.1.1.1.3 hwL2VlanPortList
+
+**** 编写脚本时注意的小问题
+ - 添加 HUAWEI-L2VLAN-MIB 到脚本解析mib库列表中
+ - 脚本中 readifindex() 从 ifDescr oid 获得的端口 mod.port 到 ifindex 对应关系有误，相差6.
+ - hwL2VlanPortList 是 portlist 类型，命令行可以用 x（16进制字符串）类型赋值，但脚本中用的是bit类型。根据调试观察到的实际情况对 PortToList() 和 ListToPort 作了调整。
+ - 目前命令行添加 vlan 的端口先改类型为 access， 删除时改回 hybrid， 有 *更复杂的需求么* ？
+ - 修改设置端口速率和带宽的 PortControl()， 按照手册上操作顺序， 添加了先将端口 negotiation 设置为 noauto
+
+** ssh登录到node
+*** DOING root password什么时候用?
+ - 进入实验时可用当前实验的用户名密码登录
+*** 解决方法
+ - 安装cygwin
+ - 创建C:\temp目录, 以便日志可写.
+ - 按照ssh-mine网页说明, 下载程序, 将其与putty放到c:\cygwin\bin下面
+ - firefox创建文件关联
+
+** DOING 图形化拓扑工具使用
+安装jre, 配置其安全级别, 使emulab网站上可执行applet
+http://www.emulab.net/netlab/client.php3
+*** DOING Bad Response
+xmlrpc问题, wiz上记录了一个google论坛的相关问题, 首先看xmlrpc-server是否启动.
+查看后发现该服务未启动, 提示未安装mysql-python模块.
+ 1. 下载MySQL-python-1.2.3.tar.gz
+ 2. 设置setup_posix.py文件中mysql_config的位置
+ 3. =python setup.py build=
+ 4. =python setup.py install=
+
+但该问题仍存在，在解决虚拟节点问题时，更新了证书。之后该问题解决。
+*** TODO 用gui开始实验提示 none type
+
+<2014-08-12 星期二>
+服务已经启动, 但仍存在问题.
+** TODO free节点经常不成功
+主要原因是节点启动时控制网口识别出错. 思路:在节点上再次执行, 查看日志; DeathByDHCP.html
+
+对应脚本是netif-emulab, 执行日志在/etc/emulab或/var/log, 结果在controlif里 (从脚本得到信息);
+或执行 =kenv boot.netif.name=, https://trac.deterlab.net/wiki/Installation/Nodes
+
+** DOING 虚拟节点使用, 连接探针
+ - 在ns中指定pcvm.
+*** 虚拟节点启动不成功
+ - 需要明确pc3000中imgid, ns文件中osid, next osid, jail osid与实验的关系
+imgid仅需要指定一个，指定多个时，后面的覆盖前面的。jail osid是老的虚拟节点操作系统，现在已经不用
+ - 将 172.16 网段加入 boss:/etc/rc.conf 路由配置中
+ - 证书过期，用命令更新证书
+
+** TODO 指定时间的ns事件
+tutorial中Starting your application automatically小节里有支持.
+
+* 阅读 wiki 笔记
+** DeathByDHCP.html, 实验网DHCP问题
+节点有多个网口, DHCP时要判断出哪个是控制网口, 并且速度要快. 是个挑战.
+** COMMENT nscommands.html, 关于实验支持的ns命令
+ 1. 在任何 tb 开头的 emulab ns 命令前, 需引用
+: source tb_compat.tcl
+ 2. 在文件的开头可用以下方式设置常用参数
+: set opt(CLIENT_COUNT) 5
+: set opt(BW) 10mb;    Link bandwidth
+: set opt(LAT) 10ms;
+: $ns duplex-link $server $router $opt(BW) $opt(LAT) DropTail
+这些参数可传递入 program-agent 执行的任何命令中, 如
+: set serverprog [$server program-agent -command "starter.sh"]
+starter.sh 中可以这样用
+: #! /bin/sh
+:    echo "Testing with $CLIENT_COUNT clients."
+ 3. 其它命令
+: tb-set-hardware node type
+: tb-set-ip node ip   
+: tb-set-ip-link node link ip 
+: tb-set-ip-lan node lan ip
+: tb-set-ip-interface node dst ip
+: tb-set-netmask lanlink netmask 
+: tb-set-node-routable-ip node onoff ；仅对 pcvm 类节点有效，可通过控制网访问
+: tb-set-node-os node os 
+: tb-set-node-rpms node rpms ; /proj /groups 或 http(s) ftp 下的 rpm 文件
+: tb-set-node-cmdline node cmdline ; 仅在　OSKit 内核上支持
+
+
+* 常用命令
+ - boss# nfree emulab-ops reloading pc2
+ - ops# node_reboot <node>
+ - ops# node_reboot -e proj, expr
+ - ops# eventsys_control [-f] replay proj expt
+ - ops# portstats <proj> <exp> //switch statistics (such as packet counts) 

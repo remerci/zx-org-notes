@@ -1,0 +1,16 @@
+/* autumn.css, author: jiqing Wu */
+/* version: 1.0 */
+
+	body {color:darkblue; background-color:antiquewhite;  font-size:17px; padding:1% 3%}
+	h1 {color:coral; text-decoration: underline overline; font-size:25px}
+	h2 {color:chocolate; text-decoration: underline overline; font-size:22px}
+	h3 {color:darkred; text-decoration: underline overline; font-size:20px}
+	blockquote {font-size:14px; border:thin solid deepskyblue; padding-left:10px}
+	hr {color:orange}
+	a {color:steelblue}
+	em {color:#fc6944}
+	pre {font-size:14px; border:thin dotted royalblue; padding-left:10px}
+	p.title {text-align:center; color:brown; font-size:25px}
+	p.author {text-align:right; font-style:italic; border-right:thin solid deepskyblue; font-size:14px}
+	p.date {text-align:right; font-style:italic; border-right:thin solid deepskyblue; font-size:14px}
+

@@ -1,0 +1,83 @@
+* org-mode in emacs						   :org:note:
+** 大纲结构处理能力
+
+     类似 word 大纲视图的结构处理，可以用快捷键 
+     
+     | key         | func                    | notes               |
+     |-------------+-------------------------+---------------------|
+     | S-Tab       | back to top 1 level     |                     |
+     | M-left      | promote heading 1 level | M-S subtree         |
+     | M-up        | move heading up         | M-S subtree         |
+     | C-c C-x C-w | delete heading          | M-w copy, C-y paste |
+     | C-c C-w     | move heading to ...     |                     |
+     | C-c *       | normal text <-> heading |                     |
+
+
+
+     对于已经完成的子树内容，可以用下面方法使之不活跃，即不在 agenda 中显示，不在大纲中显示等。
+
+     | C-c C-x a   | add archive tag         |
+     | C-c C-x A   | move to archive heading |
+     | C-c C-x C-s | store to _archive file  |
+
+     可以用 C-c / 或者 C-c / r 只显示部分内容，而将其它内容隐藏。
+
+** 事件和日程
+
+*** 事件
+
+     | C-c C-t | set state           |                   |
+     | S-left  | cycling state       | C-S cycling group |
+     | S-up    | cycling priority    |                   |
+     | C-c C-v | list events in file |                   |
+     | C-c a t | list agenda events  |                   |
+
+    可以用进度条、checkbox等辅助，将大任务分成小任务。
+
+*** 日程
+    C-c a 在 agenda list 文件中查找相关信息。
+
+    | C-c [     | add current file to agenda list       |
+    | C-c ]     | remove ...                            |
+    | C-c C-x < | lock agenda list into current subtree |
+     
+** 强大的txt表格处理能力
+
+    - 第一行完成后，后面的几行会自动生成。
+      
+    - 可以用 =|- Tab= 或者 =C-c -= 生成表格横线。
+
+    - 可以像excel那样进行表格计算。
+
+    - 特殊行 =/ <> <   >= 可以组成列组，输出时有竖线。
+
+    - =C-c |= 表格识别，默认空格或TAB分隔，带数字前缀多空格，C-u逗号分隔。
+      
+** markup
+
+    主要是 =#+= 符号引导的。标题、作者、各种环境（example, verse, quote, src）。
+    可以引入其他文件，
+
+    | =\\=  | line break              |
+    | C-c ' | edit src in native mode |
+    | C-c ; | comment rigion          |
+    | ----- | horizontal rule         |
+
+
+** 方便的 formula & fig 处理
+直接支持 latex formula 的常用写法.
+表格公式加上下面的属性可以交叉引用 `\ref{tab:basic-data}':
+#+BEGIN_EXAMPLE
+     #+CAPTION: This is the caption for the next table (or link)
+     #+LABEL:   tab:basic-data
+#+END_EXAMPLE
+
+** link
+
+*** 更方便的插入 link
+在 emacs 中的任意文件位置 =C-c l=, 存储 link
+在 org 中可以 =C-c C-l=, 插入存储的link
+
+** 其它
+    | C-c r   | capture |
+    | C-c C-q | tag     |

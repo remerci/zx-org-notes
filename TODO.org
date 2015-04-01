@@ -1,0 +1,87 @@
+#+TITLE: org agenda & inbox
+[[./memo.org][我的备忘]]
+* today [1/2]
+** ji2 transmission-web
+*** 存储空间问题
+  opkg -d dest_name 安装到别的目录dest_name 指定的目录在 opkg.conf 中指
+  定, 也可用 =--add-dest <name>:<path>= 添加. 参看 wiz 笔记, 进一步修改
+  环境变量.
+*** install & conf
+  - opkg install
+  - edit =/etc/config/transmission= and =.config/transmission-daemon/settings.json=
+    - download_dir, rpc-whitelist
+  - execute transmission-daemon
+*** emacs 远程修改 opkg.conf
+  - ssh: 提示 file exists, but cannot be read
+  - scp: 可以
+*** DOING ji2 web page
+    - State "DOING"      from ""           [2015-04-02 Thu 00:40]
+    提示: 系统忙, 稍后重试. -> 基于不死 uboot 重刷系统
+** DONE xmodmaprc
+* TODO texlive
+* quick
+** TODO english语言 chromium字体显示
+   - State "TODO"       from ""           [2015-04-01 Wed 21:39]
+** TODO wine 快捷方式
+   - State "TODO"       from ""           [2015-04-01 Wed 21:39]
+* emulab
+** TODO XEN
+
+** TODO python flow generation 4 LDoS
+* python
+** proj
+*** TODO kindleReader modify
+    - State "TODO"       from ""           [2015-04-01 Wed 21:29]
+*** emulab seer
+*** TODO system management
+    - State "TODO"       from ""           [2015-04-01 Wed 21:29]
+*** 抓取, 分析, ml, nn
+** TODO book
+   - State "TODO"       from ""           [2015-04-01 Wed 21:29]
+*** lesson 廖
+*** dive into
+*** 集体智慧
+*** invent
+** other
+*** TODO 每日一题 github
+    - State "TODO"       from ""           [2015-04-01 Wed 21:30]
+*** TODO challenge
+    - State "TODO"       from ""           [2015-04-01 Wed 21:30]
+*** pycon
+*** maillist
+* org note 整理
+** org提升
+*** project conf, one click publish all
+*** refile, classified notes in multi files
+*** DONE s5 slide
+    CLOSED: [2015-04-01 Wed 23:34]
+    - State "DONE"       from "DOING"      [2015-04-01 Wed 23:34]
+*** directly input latex fomula
+*** fig table, caption label ref
+*** DONE see fig directly
+    CLOSED: [2015-04-01 Wed 23:36]
+    - State "DONE"       from "DOING"      [2015-04-01 Wed 23:36]
+    =org-toggle-inline-images=
+*** CANCLE export to markdown
+    CLOSED: [2015-04-01 Wed 23:40]
+    - State "CANCLE"     from "DOING"      [2015-04-01 Wed 23:40] \\
+      this is a feature supported by 24.4, and now ubuntu only supports to 24.3.
+   #+BEGIN_EXAMPLE
+   C-c C-e m m
+   M-x org-md-export-as-markdown
+   # Org-mode version 8.0 or later 
+   (eval-after-load "org"
+   '(require 'ox-md nil t))
+   #+END_EXAMPLE
+** 跨平台
+*** DOING 网盘同步
+*** TODO github
+*** wiz html
+*** 办公同结构空内容, 便于增加
+
+* conf
+#+STARTUP: hidestars
+#+STARTUP: overview
+#+TAGS: @OFFICE(o) @HOME(h) WIN(w) LINUX(l) WAIT(w)
+#+TAGS:
+#+COLUMNS: %38ITEM(Details) %TAGS(Context) %7TODO(To Do) %5Effort(Time){:} %6CLOCKSUM{Total}

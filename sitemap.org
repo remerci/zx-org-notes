@@ -1,0 +1,23 @@
+#+TITLE: Sitemap
+
+   + env
+     + [[file:env/part-resize.org][分区调整]]
+   + old
+     + [[file:old/todo.org][todo]]
+     + [[file:old/work.org][°ì¹«°²ÅÅ]]
+     + [[file:old/WeekToDO.org][ÖÜ¹¤×÷ÈÎÎñÁÐ±í<2014-05-29 ÐÇÆÚËÄ>]]
+     + [[file:old/notes1.org][赵鑫的org-mode笔记]]
+   + research
+     + [[file:research/emulab.org][EmulabÏà¹Ø]]
+     + [[file:research/thesis.org][赵鑫的博士学位论文]]
+   + tool
+     + [[file:tool/c#.org][c#Ñ§Ï°]]
+     + [[file:tool/org.org][org]]
+   + [[file:dev.org][dev]]
+   + [[file:env.org][env]]
+   + [[file:life.org][life]]
+   + [[file:memo.org][memo]]
+   + [[file:TODO.org][org agenda & inbox]]
+   + [[file:res.org][res]]
+   + [[file:research.org][research]]
+   + [[file:tool.org][tool]]

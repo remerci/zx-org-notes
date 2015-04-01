@@ -1,0 +1,38 @@
+#+title: c#学习
+
+* 想实现类似office 2007界面效果(Ribbon?)
+ - 依托容器控件, 例子迅雷界面. 用split, panel, tablelayout组合
+ - 用qt, wpf[1], gtk+等界面框架
+ - 用 DotNetBar 或 DevExpress 收费控件
+ - 用 irisskin2 皮肤风格
+
+最终选择 DotNetBar.
+ [1] WPF主要为了随意控件windows控件的位置，显示比较炫的界面。你如果想做UI 设计师。 可以深入WPF专做这个。 什么渐变, 谈化, 透明什么的。
+
+* 程序要求
+ - 菜单右侧显示 炮号, 测试时间
+ - tree 为测试项目, 不同项目显示多个可选曲线, 右侧为总线曲线中当前点数值
+ - 背景黑色, 点状 grid, 40ms 总长 30s 共 750 个点. 放大最大 1 ms 1 个点.
+ - 趋势测试, 3个曲线连接.
+
+* 笔记
+** 混合模式程序集是针对“v2.0.50727”版的运行时生成的
+添加新项，应用程序配置。实际就是在程序源码目录下添加了app.config文件。
+在app.config中的configuration节内添加子节Startup，详细如下：
+: <startup useLegacyV2RuntimeActivationPolicy="true">
+:     <supportedRuntime version="v4.0" sku = ".NETFramework,Version=v4.0"/>
+:     <supportedRuntime version="v2.0.50727"/>
+: </startup>
+
+** 如何使用 zedgraph 
+参考 cs sample
+
+** 由数据库到 zedgraph list
+dataset, datatable, datarow, convert.Double
+
+** 皮肤控制
+ - dotNetBarManager 属性可设置 color scheme，但找到颜色配置文件, dcs后缀。
+ - ribbon 风格控件可在属性里直接改。
+ - form 继承 Office2007RibbonForm, 在 form_load 函数里用下列语句:
+: RibbonPredefinedColorSchemes.ChangeOffice2007ColorTable(this, DevComponents.DotNetBar.Rendering.eOffice2007ColorScheme.Black);
+

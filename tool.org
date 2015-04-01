@@ -1,0 +1,305 @@
+* Programing
+** c#学习书籍
+C#入门经典
+C#本质论
+C#高级编程（第六版）清华大学出版社
+C#框架设计 
+CLR via C#
+
+.NET学习：
+asp.net技术内幕
+《你必须知道的.net》
+programming in ASP.NET3.5 （此书讲解.NET控件比较详细）；ASP.NET入门经典（毕竟是红皮书系列，很多我们忽略的知识点里面都有所讲到，陪着前者一起阅读）
+** linux内核情景分析						     :kernel:
+
+  + 微内核：仅提供进程间通信功能，其它内核功能用进程实现。
+
+  + 宏内核：文件系统，内存管理，进程管理等。
+** wxpython总结
+问题包括：
+ 1. 调试方法
+ 2. splash全屏
+ 3. splash时空格键直接对后端程序起作用
+ 4. 调用系统字体
+ 5. 好看的button
+ 6. html显示文字块
+ 7. button与notebook的布局处理
+ 8. notebook内部btn_back关闭当前窗口
+ 9. notebook tab大小调整
+ 10. notebook中的字体调整
+ 11. staticboxsizer的label居中，字号调整
+解决：
+ 1. app调用时输出重定向到终端
+
+app = MyApp(redirect=False)
+app.MainLoop()
+
+ 2. 用ScreenDC和Image.Scale方法缩放图片，
+直接用splashScreen不用加了gauge的个性化splash
+
+        img1 = wx.Image('splash.jpg', wx.BITMAP_TYPE_ANY)   
+        dc = wx.ScreenDC()
+        dw, dh = dc.GetSize()
+        img2 = img1.Scale(dw, dh)
+        bmp = wx.BitmapFromImage(img2)
+
+        self.splash = wx.SplashScreen(bmp, wx.SPLASH_CENTRE_ON_SCREEN|\
+                                           wx.SPLASH_TIMEOUT, 5000, self)
+        wx.Yield()
+
+ 3. 后端用一个看不见的button，或者将splashscreen和窗口写一起
+        self.btn_hide=buttons.GenButton(self,-1,"")
+        self.btn_hide.SetBackgroundColour(wx.Colour(236,233,216))
+        self.btn_hide.SetSize((1,1))
+
+ 4. 5.
+import wx.lib.agw.aquabutton as AB
+        face = "SimHei"
+        prog_font = wx.TheFontList.FindOrCreateFont(20, wx.FONTFAMILY_DEFAULT, wx.FONTSTYLE_NORMAL, wx.FONTWEIGHT_NORMAL, False, face)
+        bmp_on = wx.Bitmap('online32.png', wx.BITMAP_TYPE_PNG)
+        self.btn_online = AB.AquaButton(self, -1, bmp_on, u"在线监测")
+        self.btn_online.SetFont(prog_font) 
+
+ 6. colorimpact调颜色，SetFonts字体区别一般字体和<pre>里面字体。<font face="simhei">不起作用。
+        self.html.SetFonts("simhei","simkai")
+        self.html.SetPage( html_text2)
+<body bgcolor="#066985">
+<center>
+<font size=+3 color="#F5FB9F">在线监测</font>
+</center>
+<pre>
+<font size=+1 color="#FFFFFF">
+&nbsp;1、用网线连接上装工况分析仪主机与监测计算机；<br>
+</font>
+</pre>
+ 7. GridBagSizer
+        gsizer= wx.GridBagSizer(2, 2)
+        gsizer.Add(hsizer, (1,0), flag=wx.EXPAND)
+        gsizer.Add(self.btn_back, (2,1))
+
+ 8. 
+        self.statusBar=self.CreateStatusBar()
+        self.Name = "monitor"
+        on_frame = wx.FindWindowByName("monitor")
+        on_frame.Close()
+ 9. 
+        self.SetTabSize((1500,30))
+ 10. 
+        font = wx.Font(12, wx.FONTFAMILY_DEFAULT,wx.FONTSTYLE_NORMAL,wx.NORMAL)
+            self.label.SetFont(font)
+
+** bash                                                                         :shell:bash:
+   shell脚本中对空格有严格的规定。如变量赋值，在=前后不能有空格。而test命令 [] 必须有空格隔开操作符。
+   [[file:///data/doc/program/shell/guide-bash-beginners-cn/ch07.html][第 7 章 条件语句]]
+#+BEGIN_SRC shell-script
+sort -k2n                                 # 按照第二域数字排序    
+basename file.png .png                    # 获得基本文件名        
+glxgears                                  # 查询显卡性能          
+sudo dpkg-reconfigure xserver-xorg -phigh # 自动搜索配置xorg.conf 
+screen -dmS session_name command
+mkdir -pv $LFS/{proc,sys}
+#+END_SRC
+
+*** <2010-09-04 六 15:25>
+#+BEGIN_SRC shell-script
+   history |awk '{print $2}' | sort | uniq -c | sort -rn| head -10 # 最常用命令
+   cal 1 2008  # "此命令显示一年中特定月份的日历"
+   date -d fri # "显示本周或下周星期五的日期"
+   date --date='25 Dec' +%A # "告诉你今年圣诞节是星期几"
+   du -s * | sort -k1,1rn | head # "显示当然目录占用空间排名"
+#+END_SRC
+   [[file:///data/scrapbook/data/20080115190305/index.html][2008年Linux10个热点提示 - 译言翻译]]
+
+#+BEGIN_SRC shell-script
+   ^foo^bar	         # 将上一条命令中的 foo 替换为 bar，并执行。（参考bashcook 18章详细解释）
+   cp filename{,.bak}    # 快速备份或复制文件。
+#+END_SRC
+   [[file:/data/doc/cli/10个最酷的命令.txt][file:/data/doc/cli/10个最酷的命令.txt]]
+* Tools
+** emacs
+[[./org.org][Org-mode]]
+*** elisp tutorial						      :elisp:
+  (set 'num 7)	;给变量num赋值7
+  (set 'num (+ num 1))	;num=num+1
+
+  defun定义函数，最多可有5个参数。有可选的interactive参数才能M-x或设置快捷键。
+
+  defun中常用到的其它 special form: if, let, save-excursion
+
+[[info:eintr:append-to-buffer]]
+*** DONE tabbar
+   CLOSED: [2011-08-06 六 21:56]
+   - State "DONE"       from "DOING"      [2011-08-06 六 21:56]
+    :PROPERTIES:
+    :ARCHIVE_TIME: 2011-08-06 六 21:57
+    :END:
+
+for tabbar
+(global-set-key [(super O)] 'zx-other-buffer)
+(global-set-key [(super K)] 'kill-this-buffer)
+(global-set-key [(super N)] 'zx-buffer-move-right)
+(global-set-key [(super P)] 'zx-buffer-move-left)
+
+(defun zx-other-buffer ()
+(interactive)
+(switch-to-buffer (other-buffer (current-buffer) t)))
+(defun zx-buffer-move-right ()
+(interactive)
+(tabbar-move (tabbar-current-tabset) 1))
+(defun zx-buffer-move-left ()
+(interactive)
+(tabbar-move (tabbar-current-tabset) -1))
+*** DONE tabbar like awesome, move tab left		       :tabbar:emacs:
+    - State "DONE"       [2010-11-01 一 10:09] \\
+      阅读tabbar.el的开始文档，找到相应的函数，再自定义可设快捷键函数
+    :PROPERTIES:
+      :ARCHIVE_TIME: 2010-12-11 六 20:06
+    :END:
+** python自动安装模块
+python脚本自动登录ssh网点,需要 setuptools绝对是个好东西，它可以自动的安装模块，只
+    需要你提供给它一个模块名字就可以了，并且自动帮你解决模块的依赖问题。一般情况
+    下用setuptools给安装的模块会自动放到一个后缀是.egg的目录里，下面看看怎么用
+    setuptools。首先，需要安装setuptools这个东西，安装它很简单，先去下载一个脚本：
+    　http://peak.telecommunity.com/dist/ez_setup.py 下载完后直接执行它就会帮你把
+    setuptools给装好了。
+
+    之后安装模块的使用方法就是使用一个叫easy_install的命令，在Windows里，这个命令
+    在python安装目录下的scripts里面，所以需要把scripts加到环境变量的PATH里，这样
+    用起来就更方便，linux下不需要注意这个问题。
+
+    安装软件只需要执行
+
+    easy_install 模块名
+
+    就可以了，比如要安装cherrypy，就把上面的模块名换成 cherrypy 就可以了。
+
+yaourt python-pip
+** at命令								 :at:
+   以前 at 命令始终无法生效，昨天终于知道原因了。
+   
+   先是发现 touch 一个新文件是可以成功的，可见 at 命令的机制是成功的，执行 gedit 等不成功感觉与可视窗口有关。
+   后发现在 10.04 上 at 命令的出错发信机制是成功的，看到 mail 后进一步明确这点。
+   尝试在 gedit 前加上 export DISPLAY=:0.0, 终于可以成功了。
+
+** Warcycling
+目前较为流行的Warcycling软件有，NetStumbler（Windows）、Kismet（Linux）、KisMac（Mac OS/X）、Wigle WiFi（Android）等等。
+
+** DONE [#C] mencoder转换					   :mencoder:
+   - State "DONE"       [2011-01-01 六 20:30] \\
+     - add srt subtitle to movie
+     
+     avisrt.sh:
+     
+     mencoder -o a.avi 
+     -oac copy -ovc lavc -vf scale=720:480 
+     -sub file.srt -subfont-text-scale 2 -subfont-outline 2 
+     -subpos 100 -subcp cp936 -font "Microsoft YaHei" file.avi
+     
+      - for mkv file
+     
+     mkvmerge -i file.mkv
+     
+     mkvextract tracks file.mkv 4:file.srt
+     
+     mencoder -o a.avi 
+     -oac mp3lame -lameopts cbr=128 
+     -ovc lavc -vf scale=720:480 
+     -sub file.srt -subfont-text-scale 2 -subfont-outline 2 
+     -subpos 100 -subcp cp936 -font "Microsoft YaHei" 
+     file.mkv
+   :PROPERTIES:
+   :ARCHIVE_TIME: 2011-07-24 日 17:37
+   :END:
+** cli tools
+fbterm/tmux/screen
+wget/curl/axel/aira2/rtorrent
+make
+imagemagik
+cal
+bc
+ranger/mc
+moc/mpd+ncmpcpp
+vim
+htop
+mutt
+shownews/raggle/newsbeuter
+
+ibus-fbterm(framebuffer)
+
+expect
+fbgrab
+fbida/feh/zgv
+finch/centerICQ/freetalk/naim
+irssi
+
+fbdev
+我以前被人误导，也一直认为在tty终端下只能以字符方式看视频，但是直到有一天，我无意中了解到了有framebuffer这个东东！！！！
+无意中看到mplayer的视频输出里有fbdev！！！！
+于是在开启了framebuffer的tty下。 mplayer -vo fbdev2 "我要看的视频" 我看到了神马？！
+
+** tool command                                                                 :memo:command:
+
+*** info command						       :info:
+    | n,p | next/previous same level |
+    | u   | upper level              |
+    | [,] | next/previous level      |
+    | m   | menu in this level       |
+    | L   | history                  |
+    | r   | forword                  |
+    | d   | directory                |
+    | t   | top                      |
+    | i   | index                    |
+    | f   | cross ref                |
+    | l   | last level               |
+*** xrandr							     :xrandr:
+
+#+BEGIN_SRC shell-script
+xrandr -q
+xrandr --output LVDS --auto --output VGA-0 --mode 800x600 --same-as LVDS
+xrandr --output VGA-0 --off
+#+END_SRC
+
+*** muse							       :muse:
+
+| C-c ! a | add footnotes                                      |
+| C-c C-b | Find all pages that link to this page              |
+| C-<     | Decrease the indentation of the list item at point |
+
+*** fdisk & mkfs						      :fdisk:
+#+BEGIN_SRC shell-script
+fdisk /dev/sdb np1,a1,t6,np2,+13M,w(q)
+mkfs.vfat -F 16 -n liveusb /dev/sdb1
+sudo mkfs.ext2 -b 4096 -L casper-rw /dev/sdb2
+#+END_SRC
+*** Archive							    :ARCHIVE:
+
+**** google reader					      :google_reader:
+    :PROPERTIES:
+    :ARCHIVE_TIME: 2010-08-22 日 17:00
+    :END:
+| t   | 设置当前条目的标签（用逗号分隔） |
+| m   | 标记为已读                       |
+| r   | 刷新                             |
+| g h | 打开首页                         |
+| g a | 显示所有条目                     |
+| g s | 显示已标记星号的条目             |
+| g t | 打开标签选择                     |
+| g u | 打开订阅                         |
+
+**** xfce shortcuts						       :xfce:
+    :PROPERTIES:
+    :ARCHIVE_TIME: 2010-08-22 日 17:00
+    :END:
+| alt+ctrl+esc  | xkill                    |
+| alt+f11       | fullscreen               |
+| alt+ctrl+home | move win  to  next  desk |
+
+**** context							    :context:
+    :PROPERTIES:
+    :ARCHIVE_TIME: 2010-08-22 日 17:01
+    :END:
+
+#+BEGIN_SRC shell-script
+mtxrun --script font --list
+luatools msyh.ttf
+#+END_SRC

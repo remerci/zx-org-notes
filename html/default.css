@@ -1,0 +1,279 @@
+/* Example emacs-wiki stylesheet */
+
+/* Footnote */
+
+.navfoot hr {
+  margin-bottom: 0;
+  padding: 0;
+}
+
+.navfoot table {
+  border-spacing: 0;
+  border-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+.navfoot td {
+  border-spacing: 0;
+  border-width: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* Menu */
+.menu { background-color: rgb(224, 233, 233); float: right; }
+.menuitem { font-family: Verdana,Arial,Helvetica,sans-serif; font-size: 11px; }
+.menuitem a { border-top: 1px solid rgb(255, 255, 255); border-right: 1px solid rgb(221, 221, 221); border-bottom: 1px solid rgb(221, 221, 221); padding: 1px 10px; display: block; background-color: rgb(237, 242, 242); color: rgb(0, 0, 139); text-decoration: none; font-weight: bold; }
+.menuitem a:hover { border-style: none; background-color: rgb(224, 233, 233); color: rgb(204, 0, 0); text-decoration: underline overline; }
+
+.menu:before {
+	color: red; /*rgb(50, 100, 139); */
+	content: "Menu" ;
+	display: block;
+	text-align: center;
+}
+
+#tooltipbox {
+  float: right;
+  visibility: hidden;
+}
+
+#tooltip {
+  color: #D3D3D3;               /* light gray */
+}
+
+/* Planner */
+
+.taskA { color: red }
+
+.taskB { color: green }
+
+.taskC { color: navy }
+
+.taskX {
+  color: #696969;               /* dim gray */
+  text-decoration: line-through;
+}
+
+/* Source tag */
+
+/* see `emacs-wiki-srctag.el' */
+
+.comment {
+  /* font-lock-comment-face */
+  color: #DEBC83;
+}
+.doc {
+  /* font-lock-doc-face */
+  color: #F0A4A4;
+}
+.constant {
+  /* font-lock-constant-face */
+  color: #D8ACDD;
+}
+.function-name {
+  /* font-lock-function-name-face */
+  color: #96CEF8;
+}
+.keyword {
+  /* font-lock-keyword-face */
+  color: #78f5e6;
+}
+.preprocessor {
+  /* font-lock-preprocessor-face */
+  color: #96CEF8;
+}
+.string {
+  /* font-lock-string-face */
+  color: #F0A4A4;
+}
+.type {
+  /* font-lock-type-face */
+  color: #9BEEB8;
+}
+.variable-name {
+  /* font-lock-variable-name-face */
+  color: #B5CF76;
+}
+
+/* Main */
+
+a.nonexistent {
+  background-color: white;
+  color: red;
+  font-weight: bold;
+}
+
+a.nonexistent:visited {
+  background-color: white;
+  color: red;
+}
+
+a {
+  color: #0000CD;               /* blue */
+}
+
+/*a:visited {
+  color: blue;/*purple; #556B2F;               /* dark olive green 
+}*/
+
+body {
+  margin: 0px 50px 50px 55px;
+  PADDING-left: 45px;
+  padding-right: 40px;
+  BACKGROUND: #f9f9ee; 
+  line-height: 1.8;
+  color: black;
+  background-image: url(../images/bg.gif);
+  background-repeat: repeat-y;
+}
+
+div.contents { 
+	border-top: 1px dashed grey; 
+	border-bottom: 1px dashed grey; 
+    background: transparent url(../images/menu_tr.gif) repeat;
+	margin-left: -35px; 
+	margin-bottom: 3em; 
+	padding-left: 35px; 
+}
+
+dt a { font-size: 13px; font-weight: normal; color: rgb(204, 0, 0); display: block; }
+dt a:hover { background-color: rgb(255, 231, 231); }
+dd dl dt a { font-size: 12px; font-weight: normal; color: rgb(0, 127, 29); display: block; }
+dd dl dt a:hover { background-color: rgb(223, 255, 230); }
+
+/*dl.contents {
+  margin-top: 0;
+}
+
+dt.contents {
+  margin-bottom: 0;
+}
+
+dt {
+  font-weight: bold;
+  padding: 3px;
+} */
+
+em {
+  font-style: italic;
+}
+
+h1 {
+  margin-top: 0px; 
+  margin-left: -125px;
+  margin-right: -90px;
+  padding: 22px 0px 16px 60px;
+  background: #d9e7e2 url(../images/sky.png) repeat-x;
+  /*background-color: #F5DEB3;    /* wheat */
+  color: #2F4F4F;               /* dark slate gray */
+}
+
+H2 {
+  margin-left: -35px;
+  margin-right: 0px;
+  margin-top: 50pt;
+  PADDING: 3px 0px 3px 10px; 
+/*  COLOR: #005a9c;
+  COLOR: #f63811;
+  COLOR: #c61a02; */ 
+  COLOR: #005a9c;
+  font-family: georgia, "Trebuchet MS";
+  FONT-WEIGHT: BOLD;
+  font-size: 20px;
+/*  BORDER-BOTTOM: #005a9c 1px solid;*/
+  BORDER: #005a9c 1px solid; 
+  BORDER-LEFT: #005a9c 6px solid; 
+/*  Border-width: 1px;*/
+/*  BORDER-STYLE: ridge;*/
+  BACKGROUND: #c4d9ef; 
+  line-height: 1;
+  background-image: url(../images/lightblue.gif);
+}
+
+
+H3 {
+  margin-left: -25px;
+  margin-right: 0px;
+  margin-top: 40pt;   
+  PADDING: 3px 0px 3px 10px;
+  COLOR: #2b804c;
+/*  COLOR: #6b18e7;
+    color: #ff3300;*/
+  font-family: "Trebuchet MS";
+  FONT-WEIGHT: BOLD;
+  font-size: 18px;
+  BORDER-bottom: #2b804c 1px solid; 
+  BORDER-LEFT: #2b804c 6px solid;
+/*  BORDER-BOTTOM: #6b18e7 1px dashed;
+  border-style: groove; */
+  BACKGROUND: #d9eae0;
+  line-height: 1;
+  background-image: url(../images/lightgreen.gif);
+}
+
+H4 {
+  margin-left: -15px;
+  margin-right: 0px;
+  PADDING: 3px 0px 3px 10px;
+  font-family: "Trebuchet MS";
+  FONT-WEIGHT: bold;
+  font-size: 16px;
+  /* COLOR: (#963455; fce6eb) (4d2b82, e0d5f1) */
+  COLOR: #d04b44;
+  BORDER-bottom: #d04b44 1px solid;
+  BORDER-LEFT: #d04b44 6px solid;
+/*  BACKGROUND: #f2dad8; */
+  line-height: 1;
+/*  background-image: url(../images/nicebg2.png);*/
+}
+
+li {
+  margin-bottom: 5px;
+}
+
+pre.example {
+  color: #3c5e08;
+  BORDER: #ccaa00 1px solid;
+  PADDING: 0.5em 0.5em 0.5em 1em;
+  MARGIN-left: 0px;
+  Margin-right: 0px;
+}
+
+pre.src {
+  background-color: black; /* #537182; #00839c */
+  color: white; /* #3c5e08; */
+  BORDER: #ccaa00 1px solid;
+  PADDING: 0.5em 0.5em 0.5em 1em;
+  MARGIN-left: 0px;
+  Margin-right: 0px;
+}
+
+pre.source {
+  /* Used by emacs-wiki-srctag.el */
+}
+
+pre.verse {
+  font-family: inherit;
+  line-height: 2em;
+  margin-left: 5%;
+}
+
+pre {
+  font-family: monospace;
+  margin-left: 5%;
+  white-space: pre;
+}
+
+span.footdate {
+  color: black;
+}
+
+strong {
+  font-weight: bold;
+}
+
+ul {
+  list-style-type: disc;
+}

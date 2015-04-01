@@ -1,0 +1,414 @@
+#+TITLE: 赵鑫的博士学位论文
+#+FILETAGS: :thesis:research:
+
+* DONE [#C] 论文模板 [5/5]			      :thesis:latex:template:
+ - [X] 封面再靠上 \usrpackage{layout} \addtowidth
+ - [X] ming/mang bbl自动 （放弃） 参考bstutf8.bst
+ - [X] pdfpages宏包引用pdf：pdf1.6, 引入失败，只有半个. acrobat->advanced->optimizer
+ - [X] 参考文献中文作者出不来，用NL，不用bstutf8
+ - [X] 参考文献url字体：\usrpackage{url} \urlstyle{rm}
+
+* DONE [#A] 最后完成论文 [6/6]					     :thesis:
+  - State "DONE"       [2010-12-11 六 20:04]
+  - [X] ch3 性能分析 [2/2]
+    + [X] 存储开销：多层次，密钥链、初始参数
+    + [X] 公式化分析；通信开销分析 （放弃）
+  - [X] ch3 实验内容 [7/7]
+    + [X] 通信模式，指数分布
+    + [X] DoS：onekey-authtime	2协议，2通信
+    + [X] 密钥资源利用率：keychain-use
+    + [X] 密钥产生、密钥认证：计算开销
+    + [X] 认证延迟时间:
+    + [X] 存储实现；密钥链、报文存储开销	3协议，2通信
+    + [X] 报文数、总报文流量
+  - [X] 参考文献上标还是大方括号 （放弃）
+  - [X] 摘要
+  - [X] ch5开始图、第2节标题
+  - [X] ch6帽子：模拟需求、不足、工作。标题。
+该文件的格式为
+  - [X] ch7
+  - [X] 所有内容完善 [5/5]
+    + [X] ZZZX ch1(3) ch2(2)
+    + [X] ch2 图例
+    + [X] ch4数据图重新安排
+    + [X] tick, 指数分布数据， xlabel 速率/时间
+    + [X] 参考文献格式
+  - [X] 列表环境的细致化
+    + [X] ch6 moteEmu拓扑图, 总体结构
+    + [X] 模板中每章最后一页：改变\cleardoublepage定义
+    + [X] 定义及其前一段行间距：\theorembodyfont{\linespread{1.6}\rmfamily}
+
+* 文章格式						       :thesis:latex:
+格式及宏包、使用环境等问题
+** DONE 图htbp选项没有手动安排好
+** DONE 颜色、灰度等的进一步确定
+** DONE 较好看的item环境：paralist及参数减少行距，用list定制自定义环境
+** DONE 封面与word模板统一
+** DONE tikz图形
+** DONE 表格的字号统一： 自定义环境
+** DONE 各章openright，其它openany： 主文档用openany选项，各章开头用清华模板中的cleardoublepage
+** DONE makefile
+** DONE hyperref参数的进一步细化
+** DONE 书签定位不准: 直接用清华模板的thu@chapter
+** DONE 书脊： 结合清华模板和raisebox、fbox等命令修改得到
+
+** 关于参考文件
+*** bst 文件的说明							:bst:
+
+ 1. 英文作者格式是textsc，与学位论文不一致
+ 2. inproceedings文献很多，格式要求中的publisher和address很难收集。默认这两个域没
+    有时用[S.L.] 和[s.n.]代替，改成用空代替。
+ 3. 教务要求格式：中文文献中用半角标点无空格，英文作者名字缩写加点。
+
+*** 问题
+ - 5, 11输出不全
+
+** 关于图形
+
+tikz有理想的特性，但不能胜任所有的图形画图。
+为此以inkscape作补充，并尽可能保持统一风格。
+
+图尽其意，并且精美才是目标，不要太过纠缠于用什么工具来画图。按重要性来说：
+ 1. 图形与内容的完美配合
+ 2. 构图
+ 3. 图形的精美和风格
+ 4. 画图工具，矢量图
+
+对于2、3，多看些书，用书中的构图和风格作参考；多熟悉tikz（看example，了解用法以
+及fade, shading, pattern, opacity等修饰使用）。
+
+* 文章内容							     :thesis:
+** from supervisor
+ - ch1:应用特点图
+ - ch3:图：可预测性? 混合报文传输模式
+ - ch4:FBAP的应用特点 
+ - ch5:SABA框图，整体内容
+
+ - 面临的挑战 :: 开放式的问题
+ - 现有工作的不足 :: 本文中应该有对应的解决方法
+
+** 思考收获
+
+ - 宽松同步宽松在哪？  安全条件 delta
+ - 安全条件计算的时间点    按标记计算
+ - K_0不可篡改、伪造；保密性
+** 参考内容
+*** green power							:green_power:
+
+ZigBee联盟为能量收集设备开发Green Power标准
+http://www.gkong.com 　2009-7-3 17:05:01　　
+
+ZigBee Alliances developing Green Power standards for energy harvesting devices
+ZigBee联盟为能量收集设备开发Green Power标准June 29, 2009 -- The ZigBee(R)
+Alliance, a global ecosystem of companies creating wireless solutions for use in
+energy management, commercial and consumer applications, today announced
+development of the ZigBee Green Power feature set to establish a global,
+standard technology for self-powered devices operating through energy harvesting
+techniques. These devices will communicate seamlessly with existing ZigBee and
+ZigBee PRO networks and will enable maintenance free, environmentally friendly
+products that eliminate the need for wires and batteries to power control
+devices. 6月29日消息——为能源管理、商业以及消费应用创造无线解决方案的全球性企业联
+盟 ZigBee联盟今日宣布开发ZigBee Green Power 功能套件，从而为通过能量收集技术运行
+的自供电设备确立一种全球性标准技术。这些设备将与现有的 ZigBee 和 ZigBee PRO 网络
+进行无缝的通信，并将使环境友好型的免维护产品成为可能，动力控制设备不再需要电线和
+电池。ZigBee Green Power enables new capabilities available to the ZigBee and
+ZigBee PRO networks. When the ZigBee Green Power standard is made available to
+Alliance members at the end of 2009, only ZigBee will offer an established,
+competitive marketplace for deploying switches, sensors and controllers using
+harvested energy in residential, commercial and industrial environments. Its
+energy harvesting capabilities will give manufacturers greater flexibility when
+designing innovative ZigBee products and solutions. Because ZigBee Green Power
+will work seamlessly with ZigBee and ZigBee PRO networks, it will enjoy all of
+ZigBee's numerous strengths, including: ZigBee Green Power 使新的功能可用于
+ZigBee 和ZigBee PRO 网络。等到2009年年底ZigBee Green Power 标准面向联盟会员推出的
+时候，将只有ZigBee 利用收集的能源在住宅、商业和工业环境中配置开关、传感器和控制
+器，提供一个已经建成且具有竞争力的市场。其能源收集能力将使制造商在设计创新型
+ZigBee 产品和解决方案时拥有更大的灵活性。由于ZigBee Green Power 将与ZigBee 和
+ZigBee PRO 网络完美无缺协作，所以它将享有 ZigBee 的众多优势，其中包括：
+
+- Physical Radio - Uses popular IEEE 802.15.4 standard radios available from
+  numerous suppliers
+- 2.4 GHz Band - Offers simple global operation vs. country specific radio
+  frequency
+- Interference Avoidance - Demonstrated robust performance in noisy radio
+  frequency environments
+- Robust Mesh Networking - Makes network set-up and maintenance easy, along with
+  large coverage areas, and renowned reliability
+
+
+- Security - Takes full advantage of ZigBee's robust security suite
+- Certification - Unbiased, independent certification of ZigBee products
+- Open Standard - Strong, cost competitive environment versus single-vendor
+  solutions
+
+- 常用的无线电 -- 采用众多供应商都采用的 IEEE 802.15.4 标准无线电
+- 2.4 GHz 频段 -- 提供简单的全球性操作，而不是特定国家的无线电频率
+- 避免干扰 -- 在有杂音的射频环境下的可靠表现得到证明
+- 强大的网状联网能力 -- 使网络安装和维护变容易，并且具有较大覆盖面和突出的可靠性
+- 安全 -- 充分利用 ZigBee 可靠的安全套件
+- 认证 -- ZigBee 产品无偏见的独立认证
+- 开放式标准 -- 强大而又具有成本效益的环境，
+
+而不是单一厂商的解决方案
+
+"This new enhancement of the ZigBee standard demonstrates how such a dynamic
+ecosystem can bring innovation to the market", says Frederic Vaillant, vice
+president, Technology Innovation at Schneider Electric. "Having energy
+harvesting devices connected seamlessly to standard ZigBee networks will provide
+our customers with maintenance-free and even more environment-conscious
+solutions." 施耐德电气技术创新副总裁 Frederic Vaillant 表示："ZigBee 标准的这种改
+进显示了这样一个充满生机的企业联盟如何能为市场带来创新。把能收集能源的装置完美无
+缺地连接到标准的 ZigBee 网络，为我们的客户提供免维护、甚至是更有环境意识的解决方
+案。" "ZigBee Green Power provides the world with a true standard for control
+and sensing products that can utilize harvested energy," said Bob Heile,
+chairman of the ZigBee Alliance. "These maintenance-free devices greatly expand
+your flexibility when added to comprehensive ZigBee networks already automating
+or monitoring businesses, homes and industrial environments." ZigBee 联盟主席
+Bob Heile 说道："ZigBee Green Power 针对可以利用收集的能源之控制和传感产品，为全
+球带来了真正的标准。这些免维护的设备一旦被添加到已使企业、家庭和工业环境实现自动
+化并对其进行监控的广泛 ZigBee 网络中，将大大拓展您的灵活性。" This addition of
+ZigBee Green Power to the ZigBee family significantly expands the options
+available to manufacturers, and expands the already significant abilities of
+ZigBee, further strengthening its leadership position as the global standard for
+wirelessly building automation devices into a single, easy to install and use
+network. These networks offer superb interference immunity and capabilities to
+host thousands of devices. With its ultra low-power requirements, ZigBee devices
+today run on regular batteries for years, eliminating the need for wiring to a
+power source and offering unparalleled maintenance convenience and installation
+flexibility. 这次为 ZigBee 系列增添的 ZigBee Green Power 显著拓展了制造商可用的选
+择范围，并且拓展了已经十分重要的 ZigBee 的能力，而 ZigBee 因在易安装、易使用的单
+一网络配置无线自动化设备所位居的全球性标准领导地位，从而获得进一步的巩固。这些网
+络提供卓越的抗干扰能力和功能性，可以托管数千个设备。ZigBee 设备的功耗要求超低，如
+今已可凭借常用的电池运行多年，排除了向电源配线的必要性，并且提供了无与伦比的维护
+便利性和安装灵活性。
+
+- ZigBee: Control your world
+- ZigBee: 控制您的世界 
+
+ZigBee is the global wireless language connecting dramatically different devices
+ to work together and enhance everyday life. The ZigBee Alliance is a non-profit
+ association of more than 300 member companies driving development of ZigBee
+ wireless technology. The Alliance promotes world-wide adoption of ZigBee as the
+ leading wirelessly networked, sensing and control standard for use in consumer
+ electronic, energy, home, commercial and industrial areas. ZigBee 是一种全球性无
+ 线语言，能够将将截然不同的设备连接起来并一起运作，改善日常生活。ZigBee 联盟是一
+ 个非营利性联盟，拥有300多家正在推动 ZigBee 无线技术发展的会员企业。ZigBee 联盟致
+ 力于在全球各地推广 ZigBee，促进 ZigBee 成为消费电子、能源、住宅、商业和工业领域
+ 采用的领先无线联网、传感和控制标准。
+
+--------------------
+
+Date: Monday, June 29, 2009 07:00 GMT ·                   
+
+亚洲网加州圣拉蒙6月29日电 为能源管理 商业以及消费应用创造无线解决方案的全球性企业
+联盟 ZigBee(R) 联盟今天宣布开发 ZigBee Green Power 功能套件,从而为通过能量收集技
+术运行的自供电设备确立一种全球性标准化的技术 这些设备将与现有的 ZigBee 和 ZigBee
+PRO 网络进行完美无缺的通信,并将使环境友好型免维护产品成为可能,而动力控制设备也将
+不再需要电线和电池ZigBee Green Power 使新功能可用于 ZigBee 和 ZigBee PRO 网络 等
+到2009年年底 ZigBee Green Power 标准面向联盟会员推出时,将只有 ZigBee 利用收集的能
+源在住宅 商业和工业环境中提供一个建成且具有竞争力的市场，针对配置开关 传感器和控
+制器配置。其能源收集能力将使制造商在设计创新型ZigBee 产品和解决方案时拥有更大的灵
+活性 由于 ZigBee Green Power 将与ZigBee 和 ZigBee PRO 网络进行完美无缺的协作,所以
+它将享有 ZigBee 的众多优势,其中包括:
+
+- 常用的无线电——采用众多供应商都采用的 IEEE 802.15.4 标准无线电
+- 2.4 GHz 频段——提供简单的全球性操作,而不是特定国家的无线电频
+率(射频,RF)
+- 避免干扰——在有杂音的 RF 环境下的可靠表现得到证明
+- 强大的网状联网能力——使网络安装和维护变容易,并且具有较大覆盖面和突出的可靠性
+- 安全——充分利用 ZigBee 可靠的安全套件
+- 认证——ZigBee 产品无偏见的独立认证——开放式标准——强大而又具有成本效益的环境,而不是单一厂商的解决方案
+
+施耐德电气 (Schneider Electric) 技术创新副总裁弗雷德里克· 瓦利恩特(Frederic
+Vaillant) 表示:”ZigBee 标准的这种改进显示了这样一个充满生机的企业联盟如何能为市场
+带来创新 把能收集能源的装置完美无缺地连接到标准的 ZigBee 网络,可以为我们的客户提
+供免维护 甚至是更有环境意识的解决方案 ” ZigBee 联盟主席鲍勃·海林 （Bob Heile）
+说:”ZigBee Green Power 针对可以利用收集的能源之控制和传感产品,为全球带来了真正的
+标准 这些免维护的设备一旦被添加到已使企业 家庭和工业环境实现自动化并对其进行监控
+的广泛 ZigBee 网络中,将大大拓展您的灵活性 ”这次为 ZigBee 系列增添的 ZigBee Green
+Power 效果显著地拓展了制造商可用的选择范围,并且拓展了业已十分重要的 ZigBee 能力,
+而 ZigBee 在易安装易使用的单一网络配置无线自动化设备方面居于全球性标准领导地位也
+得到了进一步巩固 这些网络提供卓越的抗干扰能力和功能性,可以托管数千个设备ZigBee 设
+备的功耗要求超低,如今已可凭借常用的电池运行多年,排除了向电源配线的必要性,并且提供
+了无与伦比的维护便利性和安装灵活性ZigBee: 控制您的世界ZigBee 是一种全球性无线语
+言,能够将将截然不同的设备连接起来并一起运作,改善日常生活 ZigBee 联盟是一个非营利
+性联盟,拥有300多家正在推动ZigBee 无线技术发展的会员企业 ZigBee 联盟致力于在全球各
+地推广 ZigBee,促进 ZigBee 成为消费电子 能源 住宅 商业和工业领域采用的领先无线联网
+传感和控制标准 垂询详情,请访问:http://www.zigbee.org
+
+消息来源：ZigBee 联盟
+联系方式: ZigBee 联盟 Kevin Schader,
+电话:+1-925-275-6672,电邮:kschader@inventures.com;
+或者 GolinHarris 的 Earlene Tang,电话:+1-714-662-5115,
+电邮:etang@golinharris.com（完）
+
+* latex, tinyos 环境及实验评测				      :thesis:tinyos:
+
+** TinyOS install on Ubuntu Hardy				     :tinyos:
+
+星期一, 五月 3, 10:37 上午
+
+All needed:
+
+1. install packages: nesc, jdk, graphviz, cvs, swig, etc
+2. cvs download tinyos source
+3. make install java, script
+4. environment variable setting
+
+Scheme 1:
+1. stanford tinyos database
+
+Scheme 2:
+1. offline deb & g++-3.4
+
+** GBAM								       :code:
+
+1. seqno 多跳广播时用序列号避免重复广播
+
+2. 接收para_msg的处理: cmt_para保存，不用buffer
+
+3. para_msg 和 gba_msg结构一样
+
+4. curr_key_index=59: state send para与其它msg冲突
+
+5. 58 key verify_msg -> while 循环 条件
+
+** 实验：							 :experiment:
+
+| 分配、发送 | 与muTESLA |
+| 初始       | 与m-TESLA |
+| 参数选择   | L、dT、Bp |
+
+  M-TESLA
+
+| 初始报文CDM可能丢失。  | 随机发送多个                 |
+| CDM可能被篡改。        | 单buffer或多buffer等概率选取 |
+
+* 编辑器
+** emacs point to region
+
+ - t: tikzset
+ - i: insert
+ - m: main includeonly
+ - z: this
+ - p: cls package
+
+
+* 答辩ppt的beamer心得						     :beamer:
+*** 动画和视频
+动画可以用录制的ppt视频，再使用multimedia宏包放出，不知为何不行。
+
+animate宏包可用于制作动画。doc目录下beamer tikz example目录收集了相关的动画演示。
+答辩ppt只用到了overlay式的动画，其中下面例子比较有用
+ - connecting-text-and-graphics
+ - prims-algorithm
+ - beamer-arrows
+
+*** 图形技巧
+
+多次使用同一图形，使用\pgfdeclareimage和\pgfuseimage命令。
+
+下面命令用于将图形精确放置在(0,-7cm)到(11cm,1cm)的方框内
+\pgfputat{\pgfxy(0,-6.5)}{\pgfbox[left,base]{\pgfimage[width=1cm]{tiger}}}
+
+----
+
+beamer的frame环境中tikz图有时编译有问题，主要是其中用到matrix和tree时。
+matrix可用参数ampersand replacement=\&，并用\&作列分割。
+tree可用fragile作frame参数解决，或tree中#1参数变为##1或####1.
+
+\path \node可识别overlay参数，便于作逐步展示的动画。
+
+*** overlay效果
+基于only的遮盖，放在下面环境中，确保替换内容占有固定的空间。
+\begin{overlayarea}{\textwidth}{3cm}
+\end{overlayarea}
+
+图形遮盖动画（类似<2->）不像itemize环境那样空间占位是固定的，
+而是随新遮盖图的产生动态分配空间，看起来不舒服。
+可用\phantom{}将必要图先包含进来占位。
+
+\beamertemplatetransparentcovereddynamic
+动态的遮盖效果
+
+
+*** 其它
+ - 图表标题不用caption，而是直接换行写
+ - \vspace
+ - 单行内容直接写，而不加item
+ - 首页、目录页、论文发表情况、致谢可作为模板
+ - xetex编译造成没有transition效果，show notes on second screen 效果没试出来
+
+
+** HANGUP [#C] 论文答辩相关 [1/1]			       :thesis:latex:
+    :PROPERTIES:
+    :ARCHIVE_TIME: 2011-07-24 日 21:45
+    :END:
+    - [X] xetex beamer模板
+      + notes
+xetex notes on second screen
+ 
+That's a reported (and probably not fixed yet) problem in pgfpages. Use this
+to tell pgfpages how to set page sizes in XeLaTeX:
+
+
+\renewcommand\pgfsetupphysicalpagesizes{%
+    \pdfpagewidth\pgfphysicalwidth\pdfpageheight\pgfphysicalheight%
+}
+
+On Wed, Jun 10, 2009 at 09:31:19PM +0200, Benjamin Koppe wrote:
+> now it doesn't work on the first frame, but that's okay. I do a 
+> \begin{frame}\end{frame} and afterwards I use Apple's Preview to delete
+> the first page.
+
+That would be the hyperref package, it you're using it.
+\usepackage[setpagesize=false]{hyperref} helps.
+If you're not using hyperref, then it must be something else :-)
+
+      + trans
+    - [X] tikz word
+加上\pagestyle{empty}部分编译出单独的pdf文件，pdfcrop得到图形pdf文件，
+转换成eps文件，openoffice导入eps文件，然后存储成word的doc文档。
+    - [X] jabref 空白
+
+在gnome下无显示，或显示不全，且java占 100%CPU，在gnome安全模式下，可正常使用。
+2010年 09月 17日 星期五 09:40:15 CST
+------
+Java程序窗口在Awesome里空白的问题
+April 9, 2010
+
+由于要控制虚拟机，不能再在虚拟机里玩STAX了，但是在我ubuntu机器上窗口都是空白的，换用sun-java6-jre
+也不行。后来发现在gnome里可以显示，应该是awesome的问题（或是java对其支持的问题），一开始用了
+export AWT_TOOLKIT=MToolkit
+
+但是在我的64位系统上死机，查了一些资料后，发现使用
+export _JAVA_AWT_WM_NONREPARENTING=”1″
+
+就能解决问题，但是只对openjdk有效。如果你用sun-java6-jre的话就要用’
+wmname LG3D
+
+为了避免引起更多问题，我还是把JRE换成openjdk了。总算可以用STAXMon.jar了。
+相关链接；
+http://brunovernay.blogspot.com/2009/07/java-gui-application-in-awesome-window.html
+http://awesome.naquadah.org/wiki/Problems_with_Java#Versions_1.5_And_1.6
+
+来自：
+[[http://blog.systemsthoughts.com/2010/04/java-blank-window-awesome-ubuntu-linux.html][Java程序窗口在Awesome里空白的问题 | Systems Thoughts]]
+* DONE 答辩后完成 [11/11]					     :thesis:
+  - State "DONE"       [2010-12-11 六 20:04]
+   - [X] 照片
+   - [X] 一卡通延期
+   - [X] 答辩材料最终提交 打印单、论文修订
+   - [X] 毕业生信息
+   - [X] CJE索引搜索
+   - [X] 银行卡相关 一卡通销户
+   - [X] 托运 找箱子 联系中铁快运
+   - [X] copy个人资料到服务器
+   - [X] 请客 吉庆 定餐
+   - [X] paper to word
+   - [X] 手机注销
+  :PROPERTIES:
+	 :ARCHIVE_TIME: 2010-12-11 六 20:07
+  :END:
+
+

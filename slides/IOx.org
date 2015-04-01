@@ -1,0 +1,17 @@
+#+TITLE: IOx
+
+* supported Router
+
+  Cisco networked devices such as our CGR 1120, 1240, 819 ISR and even some of our Video Surveillance Cameras.
+
+  IOx works by hosting applications in a *Guest Operating System (GOS)* running in a hypervisor directly on the *Connected Grid Router (CGR)*. This allows you to run your Python or even compiled code where it matters most: at the network edge. By default, the CGR comes packaged with *Yocto Linux*, but you can replace that image with your own Operating System.
+
+* arch fig
+  [[file:/windata/notes/org/research/pics/IOx_makeup.png]]
+
+* arch detail
+  [[file:/windata/notes/org/research/pics/overview-IOx.png]]
+
+* arch 
+  [[file:/windata/notes/org/research/pics/IOx_makeup1.jpg]]
+

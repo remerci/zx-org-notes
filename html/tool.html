@@ -1,0 +1,711 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>tool</title>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<meta name="title" content="tool"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2015-04-01T06:35+0800"/>
+<meta name="author" content="ZHAO Xin"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" type="text/css" href="css/default.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">tool</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">Programing</a>
+<ul>
+<li><a href="#sec-1-1">c#学习书籍</a></li>
+<li><a href="#sec-1-2">linux内核情景分析</a></li>
+<li><a href="#sec-1-3">wxpython总结</a></li>
+<li><a href="#sec-1-4">bash&nbsp;&nbsp;&nbsp;<span class="tag">shell:bash</span></a>
+<ul>
+<li><a href="#sec-1-4-1"></a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-2">Tools</a>
+<ul>
+<li><a href="#sec-2-1">emacs</a>
+<ul>
+<li><a href="#sec-2-1-1">elisp tutorial</a></li>
+<li><a href="#sec-2-1-2">tabbar</a></li>
+<li><a href="#sec-2-1-3">tabbar like awesome, move tab left</a></li>
+</ul>
+</li>
+<li><a href="#sec-2-2">python自动安装模块</a></li>
+<li><a href="#sec-2-3">at命令</a></li>
+<li><a href="#sec-2-4">Warcycling</a></li>
+<li><a href="#sec-2-5">mencoder转换</a></li>
+<li><a href="#sec-2-6">cli tools</a></li>
+<li><a href="#sec-2-7">tool command</a>
+<ul>
+<li><a href="#sec-2-7-1">info command</a></li>
+<li><a href="#sec-2-7-2">xrandr</a></li>
+<li><a href="#sec-2-7-3">muse</a></li>
+<li><a href="#sec-2-7-4">fdisk &amp; mkfs</a></li>
+<li><a href="#sec-2-7-5">Archive</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">Programing</h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1">c#学习书籍</h3>
+<div class="outline-text-3" id="text-1-1">
+
+<p>C#入门经典
+C#本质论
+C#高级编程（第六版）清华大学出版社
+C#框架设计 
+CLR via C#
+</p>
+<p>
+.NET学习：
+asp.net技术内幕
+《你必须知道的.net》
+programming in ASP.NET3.5 （此书讲解.NET控件比较详细）；ASP.NET入门经典（毕竟是红皮书系列，很多我们忽略的知识点里面都有所讲到，陪着前者一起阅读）
+</p></div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">linux内核情景分析 &nbsp;&nbsp;&nbsp;<span class="tag"><span class="kernel">kernel</span></span></h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+<ul>
+<li>微内核：仅提供进程间通信功能，其它内核功能用进程实现。
+
+</li>
+<li>宏内核：文件系统，内存管理，进程管理等。
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3">wxpython总结</h3>
+<div class="outline-text-3" id="text-1-3">
+
+<p>问题包括：
+</p><ol>
+<li>调试方法
+</li>
+<li>splash全屏
+</li>
+<li>splash时空格键直接对后端程序起作用
+</li>
+<li>调用系统字体
+</li>
+<li>好看的button
+</li>
+<li>html显示文字块
+</li>
+<li>button与notebook的布局处理
+</li>
+<li>notebook内部btn<sub>back关闭当前窗口</sub>
+</li>
+<li>notebook tab大小调整
+</li>
+<li>notebook中的字体调整
+</li>
+<li>staticboxsizer的label居中，字号调整
+</li>
+</ol>
+
+<p>解决：
+</p><ol>
+<li>app调用时输出重定向到终端
+</li>
+</ol>
+
+
+<p>
+app = MyApp(redirect=False)
+app.MainLoop()
+</p>
+<ol>
+<li>用ScreenDC和Image.Scale方法缩放图片，
+</li>
+</ol>
+
+<p>直接用splashScreen不用加了gauge的个性化splash
+</p>
+<p>
+        img1 = wx.Image('splash.jpg', wx.BITMAP<sub>TYPE</sub><sub>ANY</sub>)   
+        dc = wx.ScreenDC()
+        dw, dh = dc.GetSize()
+        img2 = img1.Scale(dw, dh)
+        bmp = wx.BitmapFromImage(img2)
+</p>
+<p>
+        self.splash = wx.SplashScreen(bmp, wx.SPLASH<sub>CENTRE</sub><sub>ON</sub><sub>SCREEN|\</sub>
+                                           wx.SPLASH<sub>TIMEOUT</sub>, 5000, self)
+        wx.Yield()
+</p>
+<ol>
+<li>后端用一个看不见的button，或者将splashscreen和窗口写一起
+        self.btn<sub>hide</sub>=buttons.GenButton(self,-1,"")
+        self.btn<sub>hide</sub>.SetBackgroundColour(wx.Colour(236,233,216))
+        self.btn<sub>hide</sub>.SetSize((1,1))
+
+</li>
+<li>5.
+</li>
+</ol>
+
+<p>import wx.lib.agw.aquabutton as AB
+        face = "SimHei"
+        prog<sub>font</sub> = wx.TheFontList.FindOrCreateFont(20, wx.FONTFAMILY<sub>DEFAULT</sub>, wx.FONTSTYLE<sub>NORMAL</sub>, wx.FONTWEIGHT<sub>NORMAL</sub>, False, face)
+        bmp<sub>on</sub> = wx.Bitmap('online32.png', wx.BITMAP<sub>TYPE</sub><sub>PNG</sub>)
+        self.btn<sub>online</sub> = AB.AquaButton(self, -1, bmp<sub>on</sub>, u"在线监测")
+        self.btn<sub>online</sub>.SetFont(prog<sub>font</sub>) 
+</p>
+<ol>
+<li>colorimpact调颜色，SetFonts字体区别一般字体和&lt;pre&gt;里面字体。&lt;font face="simhei"&gt;不起作用。
+        self.html.SetFonts("simhei","simkai")
+        self.html.SetPage( html<sub>text2</sub>)
+</li>
+</ol>
+
+<p>&lt;body bgcolor="#066985"&gt;
+&lt;center&gt;
+&lt;font size=+3 color="#F5FB9F"&gt;在线监测&lt;/font&gt;
+&lt;/center&gt;
+&lt;pre&gt;
+&lt;font size=+1 color="#FFFFFF"&gt;
+&amp;nbsp;1、用网线连接上装工况分析仪主机与监测计算机；&lt;br&gt;
+&lt;/font&gt;
+&lt;/pre&gt;
+</p><ol>
+<li>GridBagSizer
+        gsizer= wx.GridBagSizer(2, 2)
+        gsizer.Add(hsizer, (1,0), flag=wx.EXPAND)
+        gsizer.Add(self.btn<sub>back</sub>, (2,1))
+
+</li>
+<li>
+<p>
+        self.statusBar=self.CreateStatusBar()
+        self.Name = "monitor"
+        on<sub>frame</sub> = wx.FindWindowByName("monitor")
+        on<sub>frame</sub>.Close()
+</p></li>
+<li>
+<p>
+        self.SetTabSize((1500,30))
+</p></li>
+<li>
+<p>
+        font = wx.Font(12, wx.FONTFAMILY<sub>DEFAULT</sub>,wx.FONTSTYLE<sub>NORMAL</sub>,wx.NORMAL)
+            self.label.SetFont(font)
+</p></li>
+</ol>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-1-4" class="outline-3">
+<h3 id="sec-1-4">bash :<i>&lt;shell:bash&gt;</i>:</h3>
+<div class="outline-text-3" id="text-1-4">
+
+<p>   shell脚本中对空格有严格的规定。如变量赋值，在=前后不能有空格。而test命令 [] 必须有空格隔开操作符。
+   <a href="file:////data/doc/program/shell/guide-bash-beginners-cn/ch07.html">第 7 章 条件语句</a>
+</p>
+
+
+<pre class="src src-shell-script">sort -k2n                                 <span style="color: #586e75; font-style: italic;"># </span><span style="color: #586e75; font-style: italic;">&#25353;&#29031;&#31532;&#20108;&#22495;&#25968;&#23383;&#25490;&#24207;    </span>
+basename file.png .png                    <span style="color: #586e75; font-style: italic;"># </span><span style="color: #586e75; font-style: italic;">&#33719;&#24471;&#22522;&#26412;&#25991;&#20214;&#21517;        </span>
+glxgears                                  <span style="color: #586e75; font-style: italic;"># </span><span style="color: #586e75; font-style: italic;">&#26597;&#35810;&#26174;&#21345;&#24615;&#33021;          </span>
+sudo dpkg-reconfigure xserver-xorg -phigh <span style="color: #586e75; font-style: italic;"># </span><span style="color: #586e75; font-style: italic;">&#33258;&#21160;&#25628;&#32034;&#37197;&#32622;xorg.conf </span>
+screen -dmS session_name command
+mkdir -pv $<span style="color: #6c71c4;">LFS</span>/{proc,sys}
+</pre>
+
+
+
+</div>
+
+<div id="outline-container-1-4-1" class="outline-4">
+<h4 id="sec-1-4-1"><span class="timestamp-wrapper"> <span class="timestamp">2010-09-04 六 15:25</span></span></h4>
+<div class="outline-text-4" id="text-1-4-1">
+
+
+
+
+<pre class="src src-shell-script"><span style="color: #6c71c4;">history</span> |awk <span style="color: #2aa198;">'{print $2}'</span> | sort | uniq -c | sort -rn| head -10 <span style="color: #586e75; font-style: italic;"># </span><span style="color: #586e75; font-style: italic;">&#26368;&#24120;&#29992;&#21629;&#20196;</span>
+cal 1 2008  <span style="color: #586e75; font-style: italic;"># </span><span style="color: #586e75; font-style: italic;">"&#27492;&#21629;&#20196;&#26174;&#31034;&#19968;&#24180;&#20013;&#29305;&#23450;&#26376;&#20221;&#30340;&#26085;&#21382;"</span>
+date -d fri <span style="color: #586e75; font-style: italic;"># </span><span style="color: #586e75; font-style: italic;">"&#26174;&#31034;&#26412;&#21608;&#25110;&#19979;&#21608;&#26143;&#26399;&#20116;&#30340;&#26085;&#26399;"</span>
+date --date=<span style="color: #2aa198;">'25 Dec'</span> +%A <span style="color: #586e75; font-style: italic;"># </span><span style="color: #586e75; font-style: italic;">"&#21578;&#35785;&#20320;&#20170;&#24180;&#22307;&#35806;&#33410;&#26159;&#26143;&#26399;&#20960;"</span>
+du -s * | sort -k1,1rn | head <span style="color: #586e75; font-style: italic;"># </span><span style="color: #586e75; font-style: italic;">"&#26174;&#31034;&#24403;&#28982;&#30446;&#24405;&#21344;&#29992;&#31354;&#38388;&#25490;&#21517;"</span>
+</pre>
+
+<p>
+   <a href="file:////data/scrapbook/data/20080115190305/index.html">2008年Linux10个热点提示 - 译言翻译</a>
+</p>
+
+
+
+<pre class="src src-shell-script">^foo^bar          <span style="color: #586e75; font-style: italic;"># </span><span style="color: #586e75; font-style: italic;">&#23558;&#19978;&#19968;&#26465;&#21629;&#20196;&#20013;&#30340; foo &#26367;&#25442;&#20026; bar&#65292;&#24182;&#25191;&#34892;&#12290;&#65288;&#21442;&#32771;bashcook 18&#31456;&#35814;&#32454;&#35299;&#37322;&#65289;</span>
+cp filename{,.bak}    <span style="color: #586e75; font-style: italic;"># </span><span style="color: #586e75; font-style: italic;">&#24555;&#36895;&#22791;&#20221;&#25110;&#22797;&#21046;&#25991;&#20214;&#12290;</span>
+</pre>
+
+<p>
+   <a href="file:///data/doc/cli/10个最酷的命令.txt">/data/doc/cli/10个最酷的命令.txt</a>
+</p></div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">Tools</h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">emacs</h3>
+<div class="outline-text-3" id="text-2-1">
+
+<p><a href="./org.html">Org-mode</a>
+</p>
+</div>
+
+<div id="outline-container-2-1-1" class="outline-4">
+<h4 id="sec-2-1-1">elisp tutorial &nbsp;&nbsp;&nbsp;<span class="tag"><span class="elisp">elisp</span></span></h4>
+<div class="outline-text-4" id="text-2-1-1">
+
+<p>  (set 'num 7)  ;给变量num赋值7
+  (set 'num (+ num 1))  ;num=num+1
+</p>
+<p>
+  defun定义函数，最多可有5个参数。有可选的interactive参数才能M-x或设置快捷键。
+</p>
+<p>
+  defun中常用到的其它 special form: if, let, save-excursion
+</p>
+<p>
+<i>&lt;info:eintr:append-to-buffer&gt;</i>
+</p></div>
+
+</div>
+
+<div id="outline-container-2-1-2" class="outline-4">
+<h4 id="sec-2-1-2"><span class="done DONE">DONE</span> tabbar</h4>
+<div class="outline-text-4" id="text-2-1-2">
+
+<p>    <span class="timestamp-wrapper"><span class="timestamp-kwd">CLOSED: </span> <span class="timestamp">2011-08-06 六 21:56</span></span><br/>
+</p><ul>
+<li>State "DONE"       from "DOING" <span class="timestamp-wrapper"> <span class="timestamp">2011-08-06 六 21:56</span></span>
+</li>
+</ul>
+
+
+<p>
+for tabbar
+(global-set-key [(super O)] 'zx-other-buffer)
+(global-set-key [(super K)] 'kill-this-buffer)
+(global-set-key [(super N)] 'zx-buffer-move-right)
+(global-set-key [(super P)] 'zx-buffer-move-left)
+</p>
+<p>
+(defun zx-other-buffer ()
+(interactive)
+(switch-to-buffer (other-buffer (current-buffer) t)))
+(defun zx-buffer-move-right ()
+(interactive)
+(tabbar-move (tabbar-current-tabset) 1))
+(defun zx-buffer-move-left ()
+(interactive)
+(tabbar-move (tabbar-current-tabset) -1))
+</p></div>
+
+</div>
+
+<div id="outline-container-2-1-3" class="outline-4">
+<h4 id="sec-2-1-3"><span class="done DONE">DONE</span> tabbar like awesome, move tab left &nbsp;&nbsp;&nbsp;<span class="tag"><span class="tabbar">tabbar</span>&nbsp;<span class="emacs">emacs</span></span></h4>
+<div class="outline-text-4" id="text-2-1-3">
+
+<ul>
+<li>State "DONE" <span class="timestamp-wrapper"> <span class="timestamp">2010-11-01 一 10:09</span></span> <br/>
+      阅读tabbar.el的开始文档，找到相应的函数，再自定义可设快捷键函数
+</li>
+</ul>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2-2" class="outline-3">
+<h3 id="sec-2-2">python自动安装模块</h3>
+<div class="outline-text-3" id="text-2-2">
+
+<p>python脚本自动登录ssh网点,需要 setuptools绝对是个好东西，它可以自动的安装模块，只
+    需要你提供给它一个模块名字就可以了，并且自动帮你解决模块的依赖问题。一般情况
+    下用setuptools给安装的模块会自动放到一个后缀是.egg的目录里，下面看看怎么用
+    setuptools。首先，需要安装setuptools这个东西，安装它很简单，先去下载一个脚本：
+    　<a href="http://peak.telecommunity.com/dist/ez_setup.py">http://peak.telecommunity.com/dist/ez_setup.py</a> 下载完后直接执行它就会帮你把
+    setuptools给装好了。
+</p>
+<p>
+    之后安装模块的使用方法就是使用一个叫easy<sub>install的命令，在Windows里，这个命令</sub>
+    在python安装目录下的scripts里面，所以需要把scripts加到环境变量的PATH里，这样
+    用起来就更方便，linux下不需要注意这个问题。
+</p>
+<p>
+    安装软件只需要执行
+</p>
+<p>
+    easy<sub>install</sub> 模块名
+</p>
+<p>
+    就可以了，比如要安装cherrypy，就把上面的模块名换成 cherrypy 就可以了。
+</p>
+<p>
+yaourt python-pip
+</p></div>
+
+</div>
+
+<div id="outline-container-2-3" class="outline-3">
+<h3 id="sec-2-3">at命令 &nbsp;&nbsp;&nbsp;<span class="tag"><span class="at">at</span></span></h3>
+<div class="outline-text-3" id="text-2-3">
+
+<p>   以前 at 命令始终无法生效，昨天终于知道原因了。
+</p>
+<p>   
+   先是发现 touch 一个新文件是可以成功的，可见 at 命令的机制是成功的，执行 gedit 等不成功感觉与可视窗口有关。
+   后发现在 10.04 上 at 命令的出错发信机制是成功的，看到 mail 后进一步明确这点。
+   尝试在 gedit 前加上 export DISPLAY=:0.0, 终于可以成功了。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2-4" class="outline-3">
+<h3 id="sec-2-4">Warcycling</h3>
+<div class="outline-text-3" id="text-2-4">
+
+<p>目前较为流行的Warcycling软件有，NetStumbler（Windows）、Kismet（Linux）、KisMac（Mac OS/X）、Wigle WiFi（Android）等等。
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2-5" class="outline-3">
+<h3 id="sec-2-5"><span class="done DONE">DONE</span> mencoder转换 &nbsp;&nbsp;&nbsp;<span class="tag"><span class="mencoder">mencoder</span></span></h3>
+<div class="outline-text-3" id="text-2-5">
+
+<ul>
+<li>State "DONE" <span class="timestamp-wrapper"> <span class="timestamp">2011-01-01 六 20:30</span></span> <br/>
+<ul>
+<li>add srt subtitle to movie
+
+</li>
+</ul>
+
+<p>     avisrt.sh:
+</p>
+<p>     
+     mencoder -o a.avi 
+     -oac copy -ovc lavc -vf scale=720:480 
+     -sub file.srt -subfont-text-scale 2 -subfont-outline 2 
+     -subpos 100 -subcp cp936 -font "Microsoft YaHei" file.avi
+</p>
+<ul>
+<li>for mkv file
+
+</li>
+</ul>
+
+<p>     mkvmerge -i file.mkv
+</p>
+<p>     
+     mkvextract tracks file.mkv 4:file.srt
+</p>
+<p>     
+     mencoder -o a.avi 
+     -oac mp3lame -lameopts cbr=128 
+     -ovc lavc -vf scale=720:480 
+     -sub file.srt -subfont-text-scale 2 -subfont-outline 2 
+     -subpos 100 -subcp cp936 -font "Microsoft YaHei" 
+     file.mkv
+</p></li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-6" class="outline-3">
+<h3 id="sec-2-6">cli tools</h3>
+<div class="outline-text-3" id="text-2-6">
+
+<p>fbterm/tmux/screen
+wget/curl/axel/aira2/rtorrent
+make
+imagemagik
+cal
+bc
+ranger/mc
+moc/mpd+ncmpcpp
+vim
+htop
+mutt
+shownews/raggle/newsbeuter
+</p>
+<p>
+ibus-fbterm(framebuffer)
+</p>
+<p>
+expect
+fbgrab
+fbida/feh/zgv
+finch/centerICQ/freetalk/naim
+irssi
+</p>
+<p>
+fbdev
+我以前被人误导，也一直认为在tty终端下只能以字符方式看视频，但是直到有一天，我无意中了解到了有framebuffer这个东东！！！！
+无意中看到mplayer的视频输出里有fbdev！！！！
+于是在开启了framebuffer的tty下。 mplayer -vo fbdev2 "我要看的视频" 我看到了神马？！
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-2-7" class="outline-3">
+<h3 id="sec-2-7">tool command &nbsp;&nbsp;&nbsp;<span class="tag"><span class="memo">memo</span>&nbsp;<span class="command">command</span></span></h3>
+<div class="outline-text-3" id="text-2-7">
+
+
+
+</div>
+
+<div id="outline-container-2-7-1" class="outline-4">
+<h4 id="sec-2-7-1">info command &nbsp;&nbsp;&nbsp;<span class="tag"><span class="info">info</span></span></h4>
+<div class="outline-text-4" id="text-2-7-1">
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">n,p</td><td class="left">next/previous same level</td></tr>
+<tr><td class="left">u</td><td class="left">upper level</td></tr>
+<tr><td class="left">[,]</td><td class="left">next/previous level</td></tr>
+<tr><td class="left">m</td><td class="left">menu in this level</td></tr>
+<tr><td class="left">L</td><td class="left">history</td></tr>
+<tr><td class="left">r</td><td class="left">forword</td></tr>
+<tr><td class="left">d</td><td class="left">directory</td></tr>
+<tr><td class="left">t</td><td class="left">top</td></tr>
+<tr><td class="left">i</td><td class="left">index</td></tr>
+<tr><td class="left">f</td><td class="left">cross ref</td></tr>
+<tr><td class="left">l</td><td class="left">last level</td></tr>
+</tbody>
+</table>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-7-2" class="outline-4">
+<h4 id="sec-2-7-2">xrandr &nbsp;&nbsp;&nbsp;<span class="tag"><span class="xrandr">xrandr</span></span></h4>
+<div class="outline-text-4" id="text-2-7-2">
+
+
+
+
+
+<pre class="src src-shell-script">xrandr -q
+xrandr --output LVDS --auto --output VGA-0 --mode 800x600 --same-as LVDS
+xrandr --output VGA-0 --off
+</pre>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2-7-3" class="outline-4">
+<h4 id="sec-2-7-3">muse &nbsp;&nbsp;&nbsp;<span class="tag"><span class="muse">muse</span></span></h4>
+<div class="outline-text-4" id="text-2-7-3">
+
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+<colgroup><col class="left" /><col class="left" />
+</colgroup>
+<tbody>
+<tr><td class="left">C-c ! a</td><td class="left">add footnotes</td></tr>
+<tr><td class="left">C-c C-b</td><td class="left">Find all pages that link to this page</td></tr>
+<tr><td class="left">C-&lt;</td><td class="left">Decrease the indentation of the list item at point</td></tr>
+</tbody>
+</table>
+
+
+</div>
+
+</div>
+
+<div id="outline-container-2-7-4" class="outline-4">
+<h4 id="sec-2-7-4">fdisk &amp; mkfs &nbsp;&nbsp;&nbsp;<span class="tag"><span class="fdisk">fdisk</span></span></h4>
+<div class="outline-text-4" id="text-2-7-4">
+
+
+
+
+<pre class="src src-shell-script">fdisk /dev/sdb np1,a1,t6,np2,+13M,w(q)
+mkfs.vfat -F 16 -n liveusb /dev/sdb1
+sudo mkfs.ext2 -b 4096 -L casper-rw /dev/sdb2
+</pre>
+
+</div>
+
+</div>
+
+<div id="outline-container-2-7-5" class="outline-4">
+<h4 id="sec-2-7-5">Archive &nbsp;&nbsp;&nbsp;<span class="tag"><span class="ARCHIVE">ARCHIVE</span></span></h4>
+<div class="outline-text-4" id="text-2-7-5">
+
+
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2015-04-01T06:35+0800</p>
+<p class="author">Author: ZHAO Xin</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>

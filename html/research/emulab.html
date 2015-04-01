@@ -1,0 +1,432 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+               "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<title>EmulabÏà¹Ø</title>
+<meta http-equiv="Content-Type" content="text/html;charset=iso-8859-1"/>
+<meta name="title" content="EmulabÏà¹Ø"/>
+<meta name="generator" content="Org-mode"/>
+<meta name="generated" content="2015-03-31T16:13+0800"/>
+<meta name="author" content="ZHAO Xin"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+ <!--/*--><![CDATA[/*><!--*/
+  html { font-family: Times, serif; font-size: 12pt; }
+  .title  { text-align: center; }
+  .todo   { color: red; }
+  .done   { color: green; }
+  .tag    { background-color: #add8e6; font-weight:normal }
+  .target { }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .right  {margin-left:auto; margin-right:0px;  text-align:right;}
+  .left   {margin-left:0px;  margin-right:auto; text-align:left;}
+  .center {margin-left:auto; margin-right:auto; text-align:center;}
+  p.verse { margin-left: 3% }
+  pre {
+	border: 1pt solid #AEBDCC;
+	background-color: #F3F5F7;
+	padding: 5pt;
+	font-family: courier, monospace;
+        font-size: 90%;
+        overflow:auto;
+  }
+  table { border-collapse: collapse; }
+  td, th { vertical-align: top;  }
+  th.right  { text-align:center;  }
+  th.left   { text-align:center;   }
+  th.center { text-align:center; }
+  td.right  { text-align:right;  }
+  td.left   { text-align:left;   }
+  td.center { text-align:center; }
+  dt { font-weight: bold; }
+  div.figure { padding: 0.5em; }
+  div.figure p { text-align: center; }
+  div.inlinetask {
+    padding:10px;
+    border:2px solid gray;
+    margin:10px;
+    background: #ffffcc;
+  }
+  textarea { overflow-x: auto; }
+  .linenr { font-size:smaller }
+  .code-highlighted {background-color:#ffff00;}
+  .org-info-js_info-navigation { border-style:none; }
+  #org-info-js_console-label { font-size:10px; font-weight:bold;
+                               white-space:nowrap; }
+  .org-info-js_search-highlight {background-color:#ffff00; color:#000000;
+                                 font-weight:bold; }
+  /*]]>*/-->
+</style><link rel="stylesheet" type="text/css" href="css/default.css"/>
+<script type="text/javascript">
+/*
+@licstart  The following is the entire license notice for the
+JavaScript code in this tag.
+
+Copyright (C) 2012-2013 Free Software Foundation, Inc.
+
+The JavaScript code in this tag is free software: you can
+redistribute it and/or modify it under the terms of the GNU
+General Public License (GNU GPL) as published by the Free Software
+Foundation, either version 3 of the License, or (at your option)
+any later version.  The code is distributed WITHOUT ANY WARRANTY;
+without even the implied warranty of MERCHANTABILITY or FITNESS
+FOR A PARTICULAR PURPOSE.  See the GNU GPL for more details.
+
+As additional permission under GNU GPL version 3 section 7, you
+may distribute non-source (e.g., minimized or compacted) forms of
+that code without the copy of the GNU GPL normally required by
+section 4, provided you include this license notice and a URL
+through which recipients can access the Corresponding Source.
+
+
+@licend  The above is the entire license notice
+for the JavaScript code in this tag.
+*/
+<!--/*--><![CDATA[/*><!--*/
+ function CodeHighlightOn(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(null != target) {
+     elem.cacheClassElem = elem.className;
+     elem.cacheClassTarget = target.className;
+     target.className = "code-highlighted";
+     elem.className   = "code-highlighted";
+   }
+ }
+ function CodeHighlightOff(elem, id)
+ {
+   var target = document.getElementById(id);
+   if(elem.cacheClassElem)
+     elem.className = elem.cacheClassElem;
+   if(elem.cacheClassTarget)
+     target.className = elem.cacheClassTarget;
+ }
+/*]]>*///-->
+</script>
+
+</head>
+<body>
+
+<div id="preamble">
+
+</div>
+
+<div id="content">
+<h1 class="title">EmulabÏà¹Ø</h1>
+
+
+<div id="table-of-contents">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents">
+<ul>
+<li><a href="#sec-1">´æÔÚÎÊÌâ</a>
+<ul>
+<li><a href="#sec-1-1">snmpit½Å±¾ÖÐ´´½¨vlan£¬ÅäÖÃ¶Ë¿ÚËÙÂÊµÈº¯ÊýÈçºÎÐ´</a>
+<ul>
+<li><a href="#sec-1-1-1">²Î¿¼ÆäËü½Å±¾, µ«´æÔÚºÜ¶àÎÊÌâ.</a></li>
+<li><a href="#sec-1-1-2">½áºÏUCD-snmpÃüÁîÐÐ¹¤¾ß, »ªÎªmibs¿â</a>
+<ul>
+<li><a href="#sec-1-1-2-1">±àÐ´½Å±¾Ê±×¢ÒâµÄÐ¡ÎÊÌâ</a></li>
+</ul></li>
+</ul>
+</li>
+<li><a href="#sec-1-2">sshµÇÂ¼µ½node</a>
+<ul>
+<li><a href="#sec-1-2-1">root passwordÊ²Ã´Ê±ºòÓÃ?</a></li>
+<li><a href="#sec-1-2-2">½â¾ö·½·¨</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-3">Í¼ÐÎ»¯ÍØÆË¹¤¾ßÊ¹ÓÃ</a>
+<ul>
+<li><a href="#sec-1-3-1">Bad Response</a></li>
+<li><a href="#sec-1-3-2">ÓÃgui¿ªÊ¼ÊµÑéÌáÊ¾ none type</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-4">free½Úµã¾­³£²»³É¹¦</a></li>
+<li><a href="#sec-1-5">ÐéÄâ½ÚµãÊ¹ÓÃ, Á¬½ÓÌ½Õë</a>
+<ul>
+<li><a href="#sec-1-5-1">ÐéÄâ½ÚµãÆô¶¯²»³É¹¦</a></li>
+</ul>
+</li>
+<li><a href="#sec-1-6">Ö¸¶¨Ê±¼äµÄnsÊÂ¼þ</a></li>
+</ul>
+</li>
+<li><a href="#sec-2">ÔÄ¶Á wiki ±Ê¼Ç</a>
+<ul>
+<li><a href="#sec-2-1">DeathByDHCP.html, ÊµÑéÍøDHCPÎÊÌâ</a></li>
+</ul>
+</li>
+<li><a href="#sec-3">³£ÓÃÃüÁî</a></li>
+</ul>
+</div>
+</div>
+
+<div id="outline-container-1" class="outline-2">
+<h2 id="sec-1">´æÔÚÎÊÌâ</h2>
+<div class="outline-text-2" id="text-1">
+
+
+</div>
+
+<div id="outline-container-1-1" class="outline-3">
+<h3 id="sec-1-1"><span class="todo DOING">DOING</span> snmpit½Å±¾ÖÐ´´½¨vlan£¬ÅäÖÃ¶Ë¿ÚËÙÂÊµÈº¯ÊýÈçºÎÐ´</h3>
+<div class="outline-text-3" id="text-1-1">
+
+<p>½»»»»úÈí¼þ°æ±¾£ºv200r001c00spc300
+</p>
+</div>
+
+<div id="outline-container-1-1-1" class="outline-4">
+<h4 id="sec-1-1-1">²Î¿¼ÆäËü½Å±¾, µ«´æÔÚºÜ¶àÎÊÌâ.</h4>
+<div class="outline-text-4" id="text-1-1-1">
+
+<p>get1µÈÍ¨ÓÃµÄ¿É½è¼ø, µ«CreateVlan, VlanListµÈ»ù±¾²»¿ÉÓÃ
+</p></div>
+
+</div>
+
+<div id="outline-container-1-1-2" class="outline-4">
+<h4 id="sec-1-1-2">½áºÏUCD-snmpÃüÁîÐÐ¹¤¾ß, »ªÎªmibs¿â</h4>
+<div class="outline-text-4" id="text-1-1-2">
+
+<p>MIB¿âÄÚÈÝ²Î¿¼, ÃüÁîÐÐ¹¤¾ß²âÊÔ, ÔÙÅäºÏÆäËü½Å±¾²Î¿¼×ÅÐ´.
+</p>
+<ul>
+<li>Í¨¹ý4008229999×ÉÑ¯µÃµ½ vlan ÅäÖÃµÄ oid
+</li>
+</ul>
+
+<p>2011.5.25.42.3.1.1.1.1.12 hwL2VlanRowStatus
+</p><ul>
+<li>Ïà½üÎ»ÖÃÕÒµ½Ìí¼ÓÉ¾³ý¶Ë¿Úµ½vlanµÄoid
+</li>
+</ul>
+
+<p>2011.5.25.42.3.1.1.1.1.3 hwL2VlanPortList
+</p>
+
+</div>
+
+<div id="outline-container-1-1-2-1" class="outline-5">
+<h5 id="sec-1-1-2-1">±àÐ´½Å±¾Ê±×¢ÒâµÄÐ¡ÎÊÌâ</h5>
+<div class="outline-text-5" id="text-1-1-2-1">
+
+<ul>
+<li>Ìí¼Ó HUAWEI-L2VLAN-MIB µ½½Å±¾½âÎömib¿âÁÐ±íÖÐ
+</li>
+<li>½Å±¾ÖÐ readifindex() ´Ó ifDescr oid »ñµÃµÄ¶Ë¿Ú mod.port µ½ ifindex ¶ÔÓ¦¹ØÏµÓÐÎó£¬Ïà²î6.
+</li>
+<li>hwL2VlanPortList ÊÇ portlist ÀàÐÍ£¬ÃüÁîÐÐ¿ÉÒÔÓÃ x£¨16½øÖÆ×Ö·û´®£©ÀàÐÍ¸³Öµ£¬µ«½Å±¾ÖÐÓÃµÄÊÇbitÀàÐÍ¡£¸ù¾Ýµ÷ÊÔ¹Û²ìµ½µÄÊµ¼ÊÇé¿ö¶Ô PortToList() ºÍ ListToPort ×÷ÁËµ÷Õû¡£
+</li>
+<li>Ä¿Ç°ÃüÁîÐÐÌí¼Ó vlan µÄ¶Ë¿ÚÏÈ¸ÄÀàÐÍÎª access£¬ É¾³ýÊ±¸Ä»Ø hybrid£¬ ÓÐ <b>¸ü¸´ÔÓµÄÐèÇóÃ´</b> £¿
+</li>
+<li>ÐÞ¸ÄÉèÖÃ¶Ë¿ÚËÙÂÊºÍ´ø¿íµÄ PortControl()£¬ °´ÕÕÊÖ²áÉÏ²Ù×÷Ë³Ðò£¬ Ìí¼ÓÁËÏÈ½«¶Ë¿Ú negotiation ÉèÖÃÎª noauto
+</li>
+</ul>
+
+
+</div>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-2" class="outline-3">
+<h3 id="sec-1-2">sshµÇÂ¼µ½node</h3>
+<div class="outline-text-3" id="text-1-2">
+
+
+</div>
+
+<div id="outline-container-1-2-1" class="outline-4">
+<h4 id="sec-1-2-1"><span class="todo DOING">DOING</span> root passwordÊ²Ã´Ê±ºòÓÃ?</h4>
+<div class="outline-text-4" id="text-1-2-1">
+
+<ul>
+<li>½øÈëÊµÑéÊ±¿ÉÓÃµ±Ç°ÊµÑéµÄÓÃ»§ÃûÃÜÂëµÇÂ¼
+</li>
+</ul>
+
+</div>
+
+</div>
+
+<div id="outline-container-1-2-2" class="outline-4">
+<h4 id="sec-1-2-2">½â¾ö·½·¨</h4>
+<div class="outline-text-4" id="text-1-2-2">
+
+<ul>
+<li>°²×°cygwin
+</li>
+<li>´´½¨C:\tempÄ¿Â¼, ÒÔ±ãÈÕÖ¾¿ÉÐ´.
+</li>
+<li>°´ÕÕssh-mineÍøÒ³ËµÃ÷, ÏÂÔØ³ÌÐò, ½«ÆäÓëputty·Åµ½c:\cygwin\binÏÂÃæ
+</li>
+<li>firefox´´½¨ÎÄ¼þ¹ØÁª
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-3" class="outline-3">
+<h3 id="sec-1-3"><span class="todo DOING">DOING</span> Í¼ÐÎ»¯ÍØÆË¹¤¾ßÊ¹ÓÃ</h3>
+<div class="outline-text-3" id="text-1-3">
+
+<p>°²×°jre, ÅäÖÃÆä°²È«¼¶±ð, Ê¹emulabÍøÕ¾ÉÏ¿ÉÖ´ÐÐapplet
+<a href="http://www.emulab.net/netlab/client.php3">http://www.emulab.net/netlab/client.php3</a>
+</p>
+</div>
+
+<div id="outline-container-1-3-1" class="outline-4">
+<h4 id="sec-1-3-1"><span class="todo DOING">DOING</span> Bad Response</h4>
+<div class="outline-text-4" id="text-1-3-1">
+
+<p>xmlrpcÎÊÌâ, wizÉÏ¼ÇÂ¼ÁËÒ»¸ögoogleÂÛÌ³µÄÏà¹ØÎÊÌâ, Ê×ÏÈ¿´xmlrpc-serverÊÇ·ñÆô¶¯.
+²é¿´ºó·¢ÏÖ¸Ã·þÎñÎ´Æô¶¯, ÌáÊ¾Î´°²×°mysql-pythonÄ£¿é.
+</p><ol>
+<li>ÏÂÔØMySQL-python-1.2.3.tar.gz
+</li>
+<li>ÉèÖÃsetup<sub>posix</sub>.pyÎÄ¼þÖÐmysql<sub>configµÄÎ»ÖÃ</sub>
+</li>
+<li><code>python setup.py build</code>
+</li>
+<li><code>python setup.py install</code>
+</li>
+</ol>
+
+
+<p>
+µ«¸ÃÎÊÌâÈÔ´æÔÚ£¬ÔÚ½â¾öÐéÄâ½ÚµãÎÊÌâÊ±£¬¸üÐÂÁËÖ¤Êé¡£Ö®ºó¸ÃÎÊÌâ½â¾ö¡£
+</p></div>
+
+</div>
+
+<div id="outline-container-1-3-2" class="outline-4">
+<h4 id="sec-1-3-2"><span class="todo TODO">TODO</span> ÓÃgui¿ªÊ¼ÊµÑéÌáÊ¾ none type</h4>
+<div class="outline-text-4" id="text-1-3-2">
+
+
+<p>
+ <span class="timestamp-wrapper"> <span class="timestamp">2014-08-12 ÐÇÆÚ¶þ</span></span><br/>
+·þÎñÒÑ¾­Æô¶¯, µ«ÈÔ´æÔÚÎÊÌâ.
+</p></div>
+</div>
+
+</div>
+
+<div id="outline-container-1-4" class="outline-3">
+<h3 id="sec-1-4"><span class="todo TODO">TODO</span> free½Úµã¾­³£²»³É¹¦</h3>
+<div class="outline-text-3" id="text-1-4">
+
+<p>Ö÷ÒªÔ­ÒòÊÇ½ÚµãÆô¶¯Ê±¿ØÖÆÍø¿ÚÊ¶±ð³ö´í. Ë¼Â·:ÔÚ½ÚµãÉÏÔÙ´ÎÖ´ÐÐ, ²é¿´ÈÕÖ¾; DeathByDHCP.html
+</p>
+<p>
+¶ÔÓ¦½Å±¾ÊÇnetif-emulab, Ö´ÐÐÈÕÖ¾ÔÚ/etc/emulab»ò/var/log, ½á¹ûÔÚcontrolifÀï (´Ó½Å±¾µÃµ½ÐÅÏ¢);
+»òÖ´ÐÐ <code>kenv boot.netif.name</code>, <a href="https://trac.deterlab.net/wiki/Installation/Nodes">https://trac.deterlab.net/wiki/Installation/Nodes</a>
+</p>
+</div>
+
+</div>
+
+<div id="outline-container-1-5" class="outline-3">
+<h3 id="sec-1-5"><span class="todo DOING">DOING</span> ÐéÄâ½ÚµãÊ¹ÓÃ, Á¬½ÓÌ½Õë</h3>
+<div class="outline-text-3" id="text-1-5">
+
+<ul>
+<li>ÔÚnsÖÐÖ¸¶¨pcvm.
+</li>
+</ul>
+
+
+</div>
+
+<div id="outline-container-1-5-1" class="outline-4">
+<h4 id="sec-1-5-1">ÐéÄâ½ÚµãÆô¶¯²»³É¹¦</h4>
+<div class="outline-text-4" id="text-1-5-1">
+
+<ul>
+<li>ÐèÒªÃ÷È·pc3000ÖÐimgid, nsÎÄ¼þÖÐosid, next osid, jail osidÓëÊµÑéµÄ¹ØÏµ
+</li>
+</ul>
+
+<p>imgid½öÐèÒªÖ¸¶¨Ò»¸ö£¬Ö¸¶¨¶à¸öÊ±£¬ºóÃæµÄ¸²¸ÇÇ°ÃæµÄ¡£jail osidÊÇÀÏµÄÐéÄâ½Úµã²Ù×÷ÏµÍ³£¬ÏÖÔÚÒÑ¾­²»ÓÃ
+</p><ul>
+<li>½« 172.16 Íø¶Î¼ÓÈë boss:/etc/rc.conf Â·ÓÉÅäÖÃÖÐ
+</li>
+<li>Ö¤Êé¹ýÆÚ£¬ÓÃÃüÁî¸üÐÂÖ¤Êé
+</li>
+</ul>
+
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-1-6" class="outline-3">
+<h3 id="sec-1-6"><span class="todo TODO">TODO</span> Ö¸¶¨Ê±¼äµÄnsÊÂ¼þ</h3>
+<div class="outline-text-3" id="text-1-6">
+
+<p>tutorialÖÐStarting your application automaticallyÐ¡½ÚÀïÓÐÖ§³Ö.
+</p>
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-2" class="outline-2">
+<h2 id="sec-2">ÔÄ¶Á wiki ±Ê¼Ç</h2>
+<div class="outline-text-2" id="text-2">
+
+
+</div>
+
+<div id="outline-container-2-1" class="outline-3">
+<h3 id="sec-2-1">DeathByDHCP.html, ÊµÑéÍøDHCPÎÊÌâ</h3>
+<div class="outline-text-3" id="text-2-1">
+
+<p>½ÚµãÓÐ¶à¸öÍø¿Ú, DHCPÊ±ÒªÅÐ¶Ï³öÄÄ¸öÊÇ¿ØÖÆÍø¿Ú, ²¢ÇÒËÙ¶ÈÒª¿ì. ÊÇ¸öÌôÕ½.
+</p>
+
+</div>
+</div>
+
+</div>
+
+<div id="outline-container-3" class="outline-2">
+<h2 id="sec-3">³£ÓÃÃüÁî</h2>
+<div class="outline-text-2" id="text-3">
+
+<ul>
+<li>boss# nfree emulab-ops reloading pc2
+</li>
+<li>ops# node<sub>reboot</sub> &lt;node&gt;
+</li>
+<li>ops# node<sub>reboot</sub> -e proj, expr
+</li>
+<li>ops# eventsys<sub>control</sub> [-f] replay proj expt
+</li>
+<li>ops# portstats &lt;proj&gt; &lt;exp&gt; //switch statistics (such as packet counts) 
+</li>
+</ul>
+
+</div>
+</div>
+</div>
+
+<div id="postamble">
+<p class="date">Date: 2015-03-31T16:13+0800</p>
+<p class="author">Author: ZHAO Xin</p>
+<p class="creator"><a href="http://orgmode.org">Org</a> version 7.9.3f with <a href="http://www.gnu.org/software/emacs/">Emacs</a> version 24</p>
+<a href="http://validator.w3.org/check?uri=referer">Validate XHTML 1.0</a>
+
+</div>
+</body>
+</html>
